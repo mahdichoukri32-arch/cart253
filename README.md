@@ -7,4 +7,4 @@ Hello, I'm Mariam-Choukri Mahdi, an student in Computation Art program.
 I wish as the website growth, I growth too. They could be mistake done or perfection accomplish. 
 No matter what, it’s my dimension and you enter it.  </p>
 A new website I found is call [My retro TV](https://myretrotvs.com) <br>
-This is [My reflective journal](journal.md)
+[My reflective journal](journal.md)
