@@ -1,5 +1,6 @@
 # cart253
-<h1> Welcome to my DIMENSION </h1>
+<div style ="background-color: rgb(119, 221, 119);">
+<h1 style="color: rgb(147, 197, 114);"> Welcome to my DIMENSION </h1>
 Hello, I'm Mariam-Choukri Mahdi, an student in Computation Art program.
 <br>
 **It's not my first time doing coding but this time will be the right one.** 
@@ -7,10 +8,10 @@ Hello, I'm Mariam-Choukri Mahdi, an student in Computation Art program.
 <p>This website is for presenting me : my personality, my life and my dreams. 
 I wish as the website growth, I growth too. They could be mistake done or perfection accomplish. 
 No matter what, it’s my dimension and you enter it.  </p>
-<h2>Bookmarks of all favorites</h2>
+<h2 style="color:white;">Bookmarks of all favorites</h2>
 A new website I found is call [My retro TV](https://myretrotvs.com) <br>
 <h3>My journal</h3>
 [My reflective journal](journal.md)<br>
 <h3>Future Prototypes</h3> 
 Nothings currently right now :sleepy:<br>
-<div style ="background-color: rgb(119, 221, 119);">
+
