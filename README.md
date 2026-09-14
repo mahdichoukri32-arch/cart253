@@ -12,4 +12,4 @@ A new website I found is call [My retro TV](https://myretrotvs.com) <br>
 ###H3 My journal
 [My reflective journal](journal.md)
 ###H3 Future Prototypes 
-Nothings currently right now 
+Nothings currently right now :sad:
