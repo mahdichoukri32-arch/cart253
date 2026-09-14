@@ -13,3 +13,8 @@ A new website I found is call [My retro TV](https://myretrotvs.com) <br>
 [My reflective journal](journal.md)<br>
 <h3>Future Prototypes</h3> 
 Nothings currently right now :sleepy:
+<style>
+    body {
+        backgound-color: #C1EC1;
+    }
+</style>
