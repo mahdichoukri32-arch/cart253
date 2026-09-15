@@ -4,7 +4,7 @@
 Hello, I'm Mariam-Choukri Mahdi, an student in Computation Art program.
 <br>
 **It's not my first time doing coding but this time will be the right one.** 
-![The image represent Assal Lake from my country, Djibouti. It's the 3rd lowest point of the world.](topics/Prototyping_Website_/Image/Lac_Assal.jpg)
+![The image represent Lake Assal from my country, Djibouti. It's the 3rd lowest point of the world.](topics/Prototyping_Website_/Image/Lac_Assal.jpg)
 <p>This website is for presenting me : my personality, my life and my dreams. 
 I wish as the website growth, I growth too. They could be mistake done or perfection accomplish. 
 No matter what, it’s my dimension and you enter it.  </p>
