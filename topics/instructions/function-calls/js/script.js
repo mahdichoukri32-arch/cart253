@@ -12,7 +12,7 @@
 */
 function setup() {
     // Once at the beginning of the program
-    createCanvas(640, 480);
+    createCanvas(540, 780);
 }
 
 
