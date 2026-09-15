@@ -21,5 +21,5 @@ function setup() {
 */
 function draw() {
     // Every frame
-    background(200, 150, 255);
+    background(200, 155, 255);
 }
