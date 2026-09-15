@@ -9,7 +9,7 @@ Hello, I'm Mariam-Choukri Mahdi, an student in Computation Art program.
 I wish as the website growth, I growth too. They could be mistake done or perfection accomplish. 
 No matter what, it’s my dimension and you enter it.  </p>
 <h2 style="color:rgb(101, 78, 200);">Bookmarks of all favorites</h2>
-<h3 style="color:rgb(101, 78, 200);">My journal</h3>
+<h3 style="color:rgb(81, 63, 159);">My journal</h3>
 [My reflective journal](journal.md)<br>
-<h3 style="color:rgb(101, 78, 200);">Future Prototypes</h3> 
+<h3 style="color:rgb(81, 63, 159);">Future Prototypes</h3> 
 Nothings currently right now :sleepy:<br>
