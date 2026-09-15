@@ -1,4 +1,4 @@
-# Reflective Journal 
+# *Reflective Journal* 
 ## 2026/09/14
 I have worked on this project little by little. I have discovered how to apply my HTML knowledge to a complety new markup language. I find the visual appearance of Markdown as a website prettier than HTML. I was surprised that when you write Markdown syntax, it shows the result while working on Visual Studio Code.
 
