@@ -1,6 +1,6 @@
 # cart253
 ![Find this gif pretty cool](./topics/Prototyping_Website_/Image/Message_from_another_dimension.gif)
-<h1 style="color: rgb(101, 78, 200);"> Welcome to my *DIMENSION* </h1>
+<h1 style="color: rgb(101, 78, 200);"> Welcome to my ~DIMENSION~ </h1>
 Hello, I'm Mariam-Choukri Mahdi, an student in Computation Art program.
 <br>
 **It's not my first time doing coding but this time will be the right one.** 
