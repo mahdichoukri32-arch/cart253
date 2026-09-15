@@ -9,7 +9,7 @@
 "use strict";
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * CREATE THE CANVAS
 */
 function setup() {
     //Create a nice canvas to work with it
@@ -18,26 +18,28 @@ function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * A blue sky, a yellow sun
 */
 function draw() {
-    //A grey background
-    background(150, 150, 150);
-    //This how you can draw a circle
-    ellipse(320, 320, 480, 480);
-    //This how you can draw a rectangle
-    rect(200, 60, 200, 300);
-    // This how you can have outline and inline with different of a shape 
-    fill(255,0,0)
-    stroke(255, 255, 255)
-    ellipse(320, 320, 480, 480);
-    //This how we can reset our setting
-    pop();
-/** 
- * Draws a fluffy white cloud
-*/
-function drawCloud(){
-    // A cloud 
+    //A blue background
+    background(82, 223, 255);
 
-}
+
+
+    //A yellow circle
+    fill(255,255,36)
+    stroke(255,152,20)
+    ellipse(320, 320, 250, 250);
+
+    //A yellow rectangle and a blue rectangle
+    fill(250,220,130)
+    stroke(250,220,130)
+     rect(-10,350,660,150)
+
+     fill(68,154,178)
+    stroke(68,154,178)
+     rect(-10,500,660,150)
+
+
+    
 }
