@@ -1,12 +1,9 @@
 /**
- * Title of Project
- * Mariam-Choukri Mahdi
+ * Beach day
+ * Mariam-Choukri Mahdi/Alycia Malonga
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED
- *  Uses:
- * p5.js
- * https://p5js.org
+ * We visit a beautiful beach during our vacantion this summer.
+ * We're enjoying the beach for the last time.
  */
 
 "use strict";
