@@ -1,15 +1,17 @@
 # cart253
 ![Find this gif pretty cool](./topics/Prototyping_Website_/Image/Message_from_another_dimension.gif)
-<h1 style="color: rgb(101, 78, 200);"> Welcome to my DIMENSION</h1>
+# H1 Welcome to my DIMENSION
 Hello, I'm Mariam-Choukri Mahdi, an student in Computation Art program.
 <br>
 **It's not my first time doing coding but this time will be the right one.** 
 ![The image represent Lake Assal from my country, Djibouti. It's the 3rd lowest point of the world.](topics/Prototyping_Website_/Image/Lac_Assal.jpg)
-<p>This website is for presenting me : my personality, my life and my dreams. 
+
+This website is for presenting me : my personality, my life and my dreams. 
+
 I wish as the website growth, I growth too. They could be mistake done or perfection accomplish. 
-No matter what, it’s my dimension and you enter it.  </p>
-<h2 style="color:rgb(101, 78, 200);">Bookmarks of all favorites</h2>
-<h3 style="color:rgb(81, 63, 159);">My journal</h3>
+No matter what, it’s my dimension and you enter it.
+## H2 Bookmarks of all favorites
+### H3 My journal
 [My reflective journal](journal.md)<br>
-<h3 style="color:rgb(81, 63, 159);">Future Prototypes</h3> 
+### H3 Future Prototypes
 Nothings currently right now :sleepy:<br>

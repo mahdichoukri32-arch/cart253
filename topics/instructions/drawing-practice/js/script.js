@@ -53,9 +53,23 @@ function draw() {
     triangle(490,340,570,180,650,340)
 
     //Draw a bird
-    stroke(0,0,0)
+    stroke(64,199,162)
     strokeWeight(3)
     noFill()
     arc(100,100,40,30,PI,0)
     arc(140,100,40,30,PI,0)
+
+    //Draw a fish
+    fill(255,0,0)
+    noStroke()
+    ellipse(80,550,80,40)
+    arc(40,550,40,40,PI+QUARTER_PI,PI-QUARTER_PI,PIE,5)
+   
+
+    //Draw a burrow 
+    fill()
+    stroke()
+    
+
+    
 }
