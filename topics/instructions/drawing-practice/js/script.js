@@ -9,7 +9,7 @@
 "use strict";
 
 /**
- * CREATE THE CANVAS
+ * Create the canvas
 */
 function setup() {
     //Create a nice canvas to work with it
@@ -18,7 +18,7 @@ function setup() {
 
 
 /**
- * A blue sky, a yellow sun
+ * A beach with huge mountains and a deep blue sea represented at sunset.
 */
 function draw() {
     //A blue background
