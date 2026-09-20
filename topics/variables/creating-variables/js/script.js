@@ -7,6 +7,14 @@
 
 "use strict";
 
+let cheeseRed = 250;
+let cheeseGreen = 150;
+let cheeseBlue = 0;
+
+let holeShade = 0;
+let holeSize = 40;
+let holeX = 10;
+let holeY = 400;
 /**
  * Create the canvas
 */
@@ -15,14 +23,18 @@ function setup() {
 
 }
 
+/**
+ * Drawing a hole in a piece of cheese
+*/
+
 function draw() {
    // The cheese
-   background(255, 255, 0);
+   background(cheeseRed, cheeseGreen, cheeseBlue);
 
    //The hole 
    push();
    noStroke();
    fill(0);
-   ellipse(140, 175, 180);
+   ellipse(140, 175, holeSize);
    pop();
 }
