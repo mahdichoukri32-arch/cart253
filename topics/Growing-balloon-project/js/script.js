@@ -1,24 +1,24 @@
 /**
- * Title of Project
- * Author Name
+ * Growing Balloon
+ * Mariam-Choukri Mahdi
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * Until when will you be able to keep up the pressure
  */
 
 "use strict";
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * Create the canvas
 */
 function setup() {
-
+    createCanvas(640, 480); 
 }
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * Draw a ballon that growth more to a point it take the whole canvas
 */
 function draw() {
+background(0);
 
 }
