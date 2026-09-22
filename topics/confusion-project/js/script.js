@@ -47,7 +47,29 @@ function setup() {
  * Draw a face where the iris is moving inside the eyes.
 */
 function draw() {
-    background(100);
+    background(255, 105, 180);
+
+    //Draw a colourful background 
+
+    push();
+    fill(255, 20, 147);
+    noStroke()
+    square(100, 20, 430);
+    pop();
+
+    push();
+    fill(199, 21, 133);
+    noStroke()
+    square(100, 10, 450);
+    pop();
+
+      push();
+    fill(255, 20, 147);
+    noStroke()
+    square(120, 35, 400);
+    pop();
+
+
     //Draw the face 
     push();
     fill(160,82,45);
