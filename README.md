@@ -15,10 +15,10 @@ No matter what, it’s my dimension and you enter it.
 [My reflective journal](journal.md)<br>
 ### Future Prototypes
 #### Instruction : Prototype 
-Confusion project
+[Confusion project](./topics/confusion-project/index.html)
 ![Confusion project image](./topics/image_2/Confusion.png)
 
-Did you see the time ?
+Did you see the time 
 ![Did you see the time, an screenshot of the day](./topics/image_2/Day.png)
 ![Did you see the time, an screenshot of the night](./topics/image_2/Night.png)
 
