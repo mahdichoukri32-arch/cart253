@@ -15,7 +15,7 @@ No matter what, it’s my dimension and you enter it.
 [My reflective journal](journal.md)<br>
 ### Future Prototypes
 #### Instruction : Prototype 
-[Confusion project](./topics/confusion-project/index.html)
+[Confusion project](./topics/confusion-project)
 ![Confusion project image](./topics/image_2/Confusion.png)
 
 Did you see the time 
