@@ -16,7 +16,7 @@ No matter what, it’s my dimension and you enter it.
 ### Future Prototypes
 #### Instruction : Prototype 
 [Confusion project](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Instruction_Prototype/confusion-project)
-[View code](https://github.com/mahdichoukri32-arch/cart253/topics/Instruction_Prototype/confusion-project/)
+[View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Instruction_Prototype/confusion-project/)
 ![Confusion project image](./topics/Instruction_Prototype/image_2/Confusion.png)
 
 [Did you see the time](https://mahdichoukri32-arch.github.io/cart253/topics/Instruction_Prototype/Time-pass-project/) 
