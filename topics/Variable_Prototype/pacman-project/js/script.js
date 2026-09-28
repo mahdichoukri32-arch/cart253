@@ -13,7 +13,13 @@ let pacman={
   y:50,
   width:95,
   height: 95
+}
 
+let point={
+  x: 90,
+  y: 50,
+  width: 20,
+  height: 20
 }
 /**
  * Create a canvas
@@ -39,6 +45,11 @@ function draw() {
   TWO_PI - QUARTER_PI,
   PIE);
     pop();
+    //Draw a circle (a representation of your problems)
+    push();
+    fill(255, 20, 147);
+    noStroke();
+    circle(point.x, point.y, point.width, point.h);
 
 
 }
