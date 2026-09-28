@@ -15,6 +15,13 @@ let pacman={
   height: 95
 }
 
+let pacman2={
+  x:100,
+  y:150,
+  width:95,
+  height: 95
+}
+
 let point={
   x: 90,
   y: 50,
@@ -50,6 +57,11 @@ function draw() {
     fill(255, 20, 147);
     noStroke();
     circle(point.x, point.y, point.width, point.h);
-
+    //Move the pacman
+    pacman.x = pacman.x + 1.5;
+    //Move the point
+    point.x = point.x + 1.5;
+    
+    
 
 }
