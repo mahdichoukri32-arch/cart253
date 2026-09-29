@@ -24,9 +24,9 @@ function draw() {
 //The cursor and its limits
 
 push();
-strokeWeight(random);
 const weight = map(abs(movedX), 0, 30, 10, 6);
 pop();
+strokeWeight(random(0,100));
 
 //The cursor itself
  line(pmouseX, pmouseY, mouseX, mouseY);
