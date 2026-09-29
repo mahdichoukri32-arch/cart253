@@ -7,6 +7,17 @@
 
 "use strict";
 
+//The sun 
+
+let sun = {
+  x:0,
+  y:35,
+  size:130,
+  r:255,
+  g:165,
+  b:0
+};
+
 
 /**
  * Create a canvas
@@ -81,8 +92,16 @@ pop();
 
 //The sun
 push();
-fill(255, 165, 0);
+fill(sun.r,sun.g,sun.b);
 noStroke();
-circle(0,35,130,130);
+circle(sun.x, sun.y, sun.size);
 pop();
+
+//Sun size growth 
+sun.size = sun.size + 5.0;
+
+//Sun colour
+sun.r = sun.r + 8;
+sun.g = sun.g + 1;
+sun.b = sun.b + 1;
 }
