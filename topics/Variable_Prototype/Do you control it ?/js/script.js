@@ -24,7 +24,7 @@ function draw() {
 //The cursor and its limits
 
 push();
-strokeWeight(100);
+strokeWeight(random);
 const weight = map(abs(movedX), 0, 30, 10, 6);
 pop();
 
