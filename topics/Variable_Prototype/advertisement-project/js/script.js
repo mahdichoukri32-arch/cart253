@@ -18,6 +18,17 @@ let sun = {
   b:0
 };
 
+let shake = {
+  x:0,
+  y:0,
+};
+
+let sky = {
+  x:0,
+  y:0
+};
+
+
 
 /**
  * Create a canvas
@@ -40,20 +51,20 @@ function draw() {
 push();
 fill(0,0,0);
 noStroke();
-rect(100, 60, 400, 300);
+rect(100+shake.x, 60+shake.y, 400, 300);
 pop();
 
 push();
 fill(0,0,0);
 noStroke();
-rect(250,150,100,300);
+rect(250+shake.x,150+shake.y,100,300);
 pop();
 
 //The space sky
 push();
 fill(72, 61, 139);
 noStroke();
-rect(115,75,370,270);
+rect(115+sky.x,75+sky.y,370,270);
 pop();
 
 //The Mars
@@ -104,4 +115,12 @@ sun.size = sun.size + 5.0;
 sun.r = sun.r + 8;
 sun.g = sun.g + 1;
 sun.b = sun.b + 1;
+
+//shake it 
+
+shake.x = random(-2, 2);
+shake.y = random(-2, 2);
+
+sky.x = random(-2, 2);
+sky.y = random(-2, 2);
 }
