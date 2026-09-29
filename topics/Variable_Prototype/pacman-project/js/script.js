@@ -9,30 +9,47 @@
 
 // The pacman
 let pacman={
-  x:50,
+  x:-32.5,
   y:50,
-  width:95,
-  height: 95
+  width:65,
+  height: 65,
+  velocity: {
+    x: 1.5,
+    y: 0
+  }
 }
 
 let pacman2={
-  x:100,
+  x:-500.5,
   y:150,
-  width:95,
-  height: 95
+  width:65,
+  height: 65,
+  velocity: {
+    x: 1.5,
+    y: 0
+  }
 }
 
 let point={
-  x: 90,
+  x: -1.5,
   y: 50,
   width: 20,
   height: 20
+
 }
+
+let point2={
+  x: -470.5,
+  y: 150,
+  width: 20,
+  height: 20
+}
+
 /**
  * Create a canvas
 */
 function setup() {
-  createCanvas(500, 500)
+  createCanvas(400, 300)
 }
 
 
@@ -56,12 +73,27 @@ function draw() {
     push();
     fill(255, 20, 147);
     noStroke();
-    circle(point.x, point.y, point.width, point.h);
-    //Move the pacman
-    pacman.x = pacman.x + 1.5;
-    //Move the point
+    circle(point.x, point.y, point.width, point.height);
+    //Draw another pacman (to represent yourself also)
+    push();
+    fill(255, 255, 0);
+    noStroke();
+    arc(pacman2.x, pacman2.y, pacman2.width, pacman2.height, QUARTER_PI,
+  TWO_PI - QUARTER_PI,
+  PIE);
+  //Draw a circle (a representation of your problems)
+    push();
+    fill(255, 20, 147);
+    noStroke();
+    circle(point2.x, point2.y, point2.width, point2.height);
+  //Move the pacman
+    pacman.x = pacman.x + pacman.velocity.x;
+  //Move the point
     point.x = point.x + 1.5;
-    
+  //Move the pacman 2
+  pacman2.x = pacman2.x + pacman2.velocity.x;
+  //Move the point 2
+    point2.x = point2.x + 1.5;
     
 
 }
