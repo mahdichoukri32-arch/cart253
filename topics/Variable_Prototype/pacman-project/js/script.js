@@ -18,7 +18,7 @@ let pacman={
     y: 0
   }
 }
-
+// The pacman 2
 let pacman2={
   x:-500.5,
   y:150,
@@ -29,6 +29,8 @@ let pacman2={
     y: 0
   }
 }
+
+// The pacman 3
 let pacman3={
   x:1380,
   y:250,
@@ -37,9 +39,15 @@ let pacman3={
   velocity: {
     x: 1.5,
     y: 0
+  },
+  color: {
+    r: 255,
+    g: 255,
+    b: 0
   }
 }
 
+// The pacman 4
 let pacman4={
   x:-1000,
   y:250,
@@ -48,9 +56,15 @@ let pacman4={
   velocity: {
     x: 1.5,
     y: 0
+  },
+  color: {
+    r: 255,
+    g: 255,
+    b: 0
   }
 }
 
+// The point
 let point={
   x: 370.5,
   y: 50,
@@ -59,6 +73,7 @@ let point={
 
 }
 
+// The point 2 
 let point2={
   x: -470.5,
   y: 150,
@@ -105,14 +120,14 @@ function draw() {
     fill(255, 20, 147);
     noStroke();
     circle(point2.x, point2.y, point2.width, point2.height);
-  //Draw a third pacman
+  //Draw a third of pacman
   push();
-  fill(255, 255, 0);
+  fill(pacman3.color.r,pacman3.color.g,pacman3.color.b);
   noStroke();
   arc(pacman3.x, pacman3.y, pacman3.width, pacman3.height,PI + QUARTER_PI, PI - QUARTER_PI, PIE);
-  //Draw  pacman4 
+  //Draw the fourth of pacman
     push();
-    fill(255, 255, 0);
+    fill(pacman4.color.r, pacman4.color.g, pacman4.color.b);
     noStroke();
     arc(pacman4.x, pacman4.y, pacman4.width, pacman4.height, QUARTER_PI, TWO_PI - QUARTER_PI, PIE);
   //Move the pacman
@@ -127,6 +142,13 @@ function draw() {
   pacman3.x = pacman3.x - pacman3.velocity.x;
   //Move the pacman 4
   pacman4.x = pacman4.x + pacman4.velocity.x;
-    
-
+  //Stop the two last pacman 
+  pacman3.x = constrain(pacman3.x, 200, 1500);
+  pacman4.x = constrain(pacman4.x, -1500, 200);
+  //Change the colour
+  pacman3.color.g = pacman3.color.g - pacman3.velocity.x - 0.324;;
+  pacman4.color.g = pacman4.color.g - pacman4.velocity.x - 0.319;
+  //Constrain the colour
+  pacman3.color.g = constrain(pacman3.color.g, 0, 255);
+  pacman4.color.g = constrain(pacman4.color.g, 0, 255);
 }
