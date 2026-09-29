@@ -9,7 +9,7 @@
 
 // The pacman
 let pacman={
-  x:-32.5,
+  x:400,
   y:50,
   width:65,
   height: 65,
@@ -29,9 +29,30 @@ let pacman2={
     y: 0
   }
 }
+let pacman3={
+  x:1380,
+  y:250,
+  width:65,
+  height: 65,
+  velocity: {
+    x: 1.5,
+    y: 0
+  }
+}
+
+let pacman4={
+  x:-1000,
+  y:250,
+  width:65,
+  height: 65,
+  velocity: {
+    x: 1.5,
+    y: 0
+  }
+}
 
 let point={
-  x: -1.5,
+  x: 370.5,
   y: 50,
   width: 20,
   height: 20
@@ -65,9 +86,7 @@ function draw() {
     push();
     fill(255, 255, 0);
     noStroke();
-    arc(pacman.x, pacman.y, pacman.width, pacman.height, QUARTER_PI,
-  TWO_PI - QUARTER_PI,
-  PIE);
+    arc(pacman.x, pacman.y, pacman.width, pacman.height,PI + QUARTER_PI, PI - QUARTER_PI, PIE);
     pop();
     //Draw a circle (a representation of your problems)
     push();
@@ -86,14 +105,28 @@ function draw() {
     fill(255, 20, 147);
     noStroke();
     circle(point2.x, point2.y, point2.width, point2.height);
+  //Draw a third pacman
+  push();
+  fill(255, 255, 0);
+  noStroke();
+  arc(pacman3.x, pacman3.y, pacman3.width, pacman3.height,PI + QUARTER_PI, PI - QUARTER_PI, PIE);
+  //Draw  pacman4 
+    push();
+    fill(255, 255, 0);
+    noStroke();
+    arc(pacman4.x, pacman4.y, pacman4.width, pacman4.height, QUARTER_PI, TWO_PI - QUARTER_PI, PIE);
   //Move the pacman
-    pacman.x = pacman.x + pacman.velocity.x;
+    pacman.x = pacman.x - pacman.velocity.x;
   //Move the point
-    point.x = point.x + 1.5;
+    point.x = point.x - 1.5;
   //Move the pacman 2
   pacman2.x = pacman2.x + pacman2.velocity.x;
   //Move the point 2
     point2.x = point2.x + 1.5;
+  //Move the pacman 3
+  pacman3.x = pacman3.x - pacman3.velocity.x;
+  //Move the pacman 4
+  pacman4.x = pacman4.x + pacman4.velocity.x;
     
 
 }
