@@ -96,7 +96,7 @@ function draw() {
     pop();
     //Draw a circle (a representation of your problems)
     push();
-    fill(255, 20, 147);
+    fill(255,255,255);
     noStroke();
     circle(point.x, point.y, point.width, point.height);
     //Draw another pacman (to represent yourself also)
@@ -108,7 +108,7 @@ function draw() {
   PIE);
   //Draw a circle (a representation of your problems)
     push();
-    fill(255, 20, 147);
+    fill(128, 128, 128);
     noStroke();
     circle(point2.x, point2.y, point2.width, point2.height);
   //Draw a third of pacman
