@@ -15,7 +15,7 @@ No matter what, it’s my dimension and you enter it.
 [My reflective journal](journal.md)<br>
 ### Future Prototypes
 #### Instruction : Prototype 
-[Confusion project](https://mahdichoukri32-arch.github.io/cart253/tree/main/topics/Instruction_Prototype/confusion-project)
+[Confusion project](https://mahdichoukri32-arch.github.io/cart253/topics/Instruction_Prototype/confusion-project)
 [View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Instruction_Prototype/confusion-project/)
 ![Confusion project image](./topics/Instruction_Prototype/image_2/Confusion.png)
 
