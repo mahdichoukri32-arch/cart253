@@ -14,7 +14,7 @@ let pacman={
   width:65,
   height: 65,
   velocity: {
-    x: 4,
+    x: 3,
     y: 0
   }
 }
@@ -25,7 +25,7 @@ let pacman2={
   width:65,
   height: 65,
   velocity: {
-    x: 4,
+    x: 3,
     y: 0
   }
 }
@@ -37,7 +37,7 @@ let pacman3={
   width:65,
   height: 65,
   velocity: {
-    x: 4,
+    x: 3,
     y: 0
   },
   
@@ -50,7 +50,7 @@ let pacman4={
   width:65,
   height: 65,
   velocity: {
-    x: 4,
+    x: 3,
     y: 0
   },
 }
@@ -146,7 +146,7 @@ function draw() {
   //Move the pacman
     pacman.x = pacman.x - pacman.velocity.x;
   //Move the point
-    point.x = point.x -3;
+    point.x = point.x - 3;
   //Move the pacman 2
   pacman2.x = pacman2.x + pacman2.velocity.x;
   //Move the point 2
