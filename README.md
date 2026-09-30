@@ -28,3 +28,19 @@ No matter what, it’s my dimension and you enter it.
 [View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Instruction_Prototype/Growing-balloon-project/)
 ![Screenshot of the balloon before the explosion](./topics/Instruction_Prototype/image_2/Balloon.png)
 ![Screenshot of the balloon after the explosion](./topics/Instruction_Prototype/image_2/Balloon_explosion.png)
+
+### Variable : Prototype
+[Are you eating yourself ?](https://mahdichoukri32-arch.github.io/cart253/topics/Variable_Prototype/pacman-project)
+[View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Variable_Prototype/pacman-project)
+[Are you eating yourself ?](./topics/Variable_Prototype/image/Areyoueatingyourself?.png)
+
+[Ad out of place](https://mahdichoukri32-arch.github.io/cart253/topics/Variable_Prototype/advertisement-project)
+[View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Variable_Prototype/advertisement-project)
+[Are you eating yourself ?](./topics/Variable_Prototype/image/Adoutofplace.png)
+
+[Ad out of place](https://mahdichoukri32-arch.github.io/cart253/topics/Variable_Prototype/Doyoucontrolit?)
+[View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Variable_Prototype/Doyoucontrolit?)
+[Are you eating yourself ?](./topics/Variable_Prototype/image/Doyoucontrolit?.png)
+
+
+
