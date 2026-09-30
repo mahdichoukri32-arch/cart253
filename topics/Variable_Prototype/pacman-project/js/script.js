@@ -140,9 +140,9 @@ function draw() {
     noStroke();
     arc(pacman4.x, pacman4.y, pacman4.width, pacman4.height, QUARTER_PI, TWO_PI - QUARTER_PI, PIE);
   //Move the text
-  message.x = message.x - 4;
+  message.x = message.x - 4.05;
   //Move the text
-  message2.x = message2.x + 4;
+  message2.x = message2.x + 4.05;
   //Move the pacman
     pacman.x = pacman.x - pacman.velocity.x;
   //Move the point
