@@ -142,7 +142,7 @@ function draw() {
   //Move the text
   message.x = message.x - 3.05;
   //Move the text
-  message2.x = message2.x + 3.05;
+  message2.x = message2.x + 2.80;
   //Move the pacman
     pacman.x = pacman.x - pacman.velocity.x;
   //Move the point
