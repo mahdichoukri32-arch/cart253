@@ -14,7 +14,7 @@ let pacman={
   width:65,
   height: 65,
   velocity: {
-    x: 1.5,
+    x: 4,
     y: 0
   }
 }
@@ -25,7 +25,7 @@ let pacman2={
   width:65,
   height: 65,
   velocity: {
-    x: 1.5,
+    x: 4,
     y: 0
   }
 }
@@ -37,7 +37,7 @@ let pacman3={
   width:65,
   height: 65,
   velocity: {
-    x: 1.5,
+    x: 4,
     y: 0
   },
   
@@ -50,7 +50,7 @@ let pacman4={
   width:65,
   height: 65,
   velocity: {
-    x: 1.5,
+    x: 4,
     y: 0
   },
 }
@@ -71,6 +71,18 @@ let point2={
   width: 20,
   height: 20
 }
+//Text 
+
+let message={
+x : 450,
+y : 50
+}
+
+let message2={
+  x:-680,
+  y:150
+}
+
 
 /**
  * Create a canvas
@@ -87,19 +99,25 @@ function setup() {
 function draw() {
   background(0);
     
-
-    //Draw a pacman
+  // Write a text that follow it
+    push();
+    fill(255, 0, 255);
+    strokeWeight(2)
+    text('Are you eating yourself ?',message.x,message.y);
+    text('Are you eating yourself ?',message2.x,message2.y);
+    pop();
+  //Draw a pacman
     push();
     fill(255, 255, 0);
     noStroke();
     arc(pacman.x, pacman.y, pacman.width, pacman.height,PI + QUARTER_PI, PI - QUARTER_PI, PIE);
     pop();
-    //Draw a circle (a representation of your problems)
+  //Draw a circle (a representation of your problems)
     push();
     fill(255,255,255);
     noStroke();
     circle(point.x, point.y, point.width, point.height);
-    //Draw another pacman (to represent yourself also)
+  //Draw another pacman (to represent yourself also)
     push();
     fill(255, 165, 0);
     noStroke();
@@ -121,14 +139,18 @@ function draw() {
     fill(255,0,0);
     noStroke();
     arc(pacman4.x, pacman4.y, pacman4.width, pacman4.height, QUARTER_PI, TWO_PI - QUARTER_PI, PIE);
+  //Move the text
+  message.x = message.x - 4;
+  //Move the text
+  message2.x = message2.x + 4;
   //Move the pacman
     pacman.x = pacman.x - pacman.velocity.x;
   //Move the point
-    point.x = point.x - 1.5;
+    point.x = point.x - 4;
   //Move the pacman 2
   pacman2.x = pacman2.x + pacman2.velocity.x;
   //Move the point 2
-    point2.x = point2.x + 1.5;
+    point2.x = point2.x + 4;
   //Move the pacman 3
   pacman3.x = pacman3.x - pacman3.velocity.x;
   //Move the pacman 4
