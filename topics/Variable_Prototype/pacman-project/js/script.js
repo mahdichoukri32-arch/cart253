@@ -103,8 +103,8 @@ function draw() {
     push();
     fill(255, 0, 255);
     strokeWeight(2)
-    text('Are you eating yourself ?',message.x,message.y);
-    text('Are you eating yourself ?',message2.x,message2.y);
+    text('ARE YOU EATING YOURSELF ?',message.x,message.y);
+    text('ARE YOU EATING YOURSELF ?',message2.x,message2.y);
     pop();
   //Draw a pacman
     push();
@@ -140,17 +140,17 @@ function draw() {
     noStroke();
     arc(pacman4.x, pacman4.y, pacman4.width, pacman4.height, QUARTER_PI, TWO_PI - QUARTER_PI, PIE);
   //Move the text
-  message.x = message.x - 4.05;
+  message.x = message.x - 3.05;
   //Move the text
-  message2.x = message2.x + 4.05;
+  message2.x = message2.x + 3.05;
   //Move the pacman
     pacman.x = pacman.x - pacman.velocity.x;
   //Move the point
-    point.x = point.x - 4;
+    point.x = point.x -3;
   //Move the pacman 2
   pacman2.x = pacman2.x + pacman2.velocity.x;
   //Move the point 2
-    point2.x = point2.x + 4;
+    point2.x = point2.x + 3;
   //Move the pacman 3
   pacman3.x = pacman3.x - pacman3.velocity.x;
   //Move the pacman 4
