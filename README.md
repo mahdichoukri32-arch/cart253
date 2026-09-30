@@ -38,8 +38,8 @@ No matter what, it’s my dimension and you enter it.
 [View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Variable_Prototype/advertisement-project)
 ![Ad out of place](./topics/Variable_Prototype/image_3/Ad.png)
 
-[Do you control it ?](https://mahdichoukri32-arch.github.io/cart253/topics/Variable_Prototype/Doyoucontrolit3%?)
-[View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Variable_Prototype/Doyoucontrolit%3?)
+[Do you control it ?](https://mahdichoukri32-arch.github.io/cart253/topics/Variable_Prototype/Do-you-control-it-?)
+[View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Variable_Prototype/Do-you-control-it-?)
 ![Do you control it ?](./topics/Variable_Prototype/image_3/Mouse.png)
 
 
