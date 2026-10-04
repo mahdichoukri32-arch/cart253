@@ -53,6 +53,10 @@ function checkInput() {
         //If it is then the creature become happy !!
         creature.fill = creature.fills.happy;
     }
+    // The creature HATE the keyboard. 
+    else if (keyIsPressed) {
+        creature.fill = creature.fills.angry;
+    }
      //If not then it become bored again
     else {
         creature.fill = creature.fills.bored;
