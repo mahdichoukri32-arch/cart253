@@ -25,7 +25,13 @@ const creature = {
         happy: "#33cc33", // Green
         angry: "#cc3333", // Red
         dead: "#777777" // Grey
-    }
+    },
+    //Is the creature alive ?
+    alive: true,
+    boredomLevel: 0,
+    //How bored ca  the creature get before it died ?
+    deathByBoredomThreshold : 500
+
 };
 
 /**
@@ -53,6 +59,9 @@ function draw() {
  * Creature is happy if being massaged and otherwise bored
  */
 function checkInput() {
+    if (!creature.alive) {
+        return;
+    }
     // Calculate the distance between the cursor and the creature
     // and put it into a "distance" variable (using const again since
     // we won't change this again later!)
@@ -73,6 +82,15 @@ function checkInput() {
     else {
         // Otherwise the creature is bored
         creature.fill = creature.fills.bored;
+        // Creature gets a little bit more bored
+        creature.boredomLevel += 1;
+        if (creature.boredomLevel > creature.deathByBoredomThreshold){
+            //Creature dies of boredom
+            creature.alive = false;
+            //Creature looks dead
+            creature.fill = creature.fills.dead;
+
+        }
     }
 }
 
