@@ -1,15 +1,14 @@
 /**
- * Title of Project
- * Author Name
+ * Boom !
+ * Mariam-Choukri Mahdi
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * Do you choose to explode the bomb or to not ? 
  */
 
 "use strict";
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * Create a wide canva so when it's explode the whole screen seem to be affected. 
 */
 function setup() {
 
@@ -17,7 +16,7 @@ function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * Draw a black bomb with a black circle, the wick is brown line and spark is represented by an orange circle. 
 */
 function draw() {
 
