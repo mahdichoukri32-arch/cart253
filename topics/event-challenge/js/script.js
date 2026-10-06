@@ -59,4 +59,4 @@ function displayScore() {
   textAlign(CENTER, CENTER);
   text(floor(score), width/2, height/2);
   pop();
-}
+}      
