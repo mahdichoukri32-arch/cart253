@@ -95,6 +95,8 @@ function drawTree() {
     circle(540, 335, 100);
 
     pop();
+
+    drawInstruction();
 }
 
 function increaseSunlight () {
@@ -142,4 +144,16 @@ function drawSunRays () {
         line(520, 140, 400, 260);
     }
     pop();
+}
+
+function drawInstruction () {
+    if (sunlight < 30) {
+        push();
+        fill(0, 100, 0);
+        strokeWeight(5)
+        textSize(20);
+        textAlign(CENTER)
+        text("Hold the mouse to increse the sunlight", width/2, 30);
+        pop();
+    }
 }
