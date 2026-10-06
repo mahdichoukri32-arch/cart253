@@ -25,3 +25,13 @@ The most difficult part was understanding how to control movement without lettin
 
 
 ![A screenshot](./topics/Variable_Prototype/image_3/Mouse.png)
+
+## 2026/10/06
+This week, I discovered conditional functions and used them as a tool for my new prototypes. I also continued some concepts from my previous projects, especially the passage of time and the feeling of having control over what happens on the screen.
+
+The prototype that pleased me the most was the *Boom!* project, but at the same time, it was the one I found the most annoying to make. The part that required the most work was the spark. I wanted it to move down the wick and stop when it reached the beginning of the bomb. At first, the spark did not correctly follow the line, or it disappeared behind the circle. At one point, I even created a spark that became wider and wider until it took over almost the whole screen. Even if this was not what I wanted, it was interesting to see how a small change in the code could completely change the result.
+
+The rays of sunlight also took me time to control in my *Forest* project. They either became too long or did not visually affect the leaves enough compared to the colour changes. To change the colour of the leaves, I created a sunlight variable and used several if and else if statements to check its value. When the sunlight reaches certain values, the leaves change to another colour. This helped me represent the change of seasons through interaction.
+
+What surprised me about conditionals is how they allow me to reuse ideas from variables while organizing different possibilities in my program. I also find the interactive aspect interesting because the user can make choices that directly affect what happens. Through these prototypes, I hope people can see how their decisions can have an impact, from controlling a small creature like a fish to changing an entire season. In the future, I would like to use conditionals to make the user part of the story instead of only being an observer.
+![A screenshot](./topics/Conditionals_Prototype_/image/Autumn.png)
