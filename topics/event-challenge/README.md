@@ -1,12 +1,13 @@
-# TITLE OF PROJECT
+# The Only Move Is Not To Play
 
-AUTHOR NAME
+Mariam-Choukri Mahdi
+Alycia Malonga
 
 [View this project online](URL_FOR_THE_RUNNING_PROJECT)
 
 ## Description
 
-This description should help the reader understand what the program is, anything they should know to be able to experience it (controls, special features, etc.), and what the desired user experience is. For example:
+A game where your score increases so long as you do nothing.
 
 ## Attribution
 
