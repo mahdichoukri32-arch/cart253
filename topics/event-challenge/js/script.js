@@ -18,6 +18,7 @@ let gameOver = false;
  */
 function setup() {
   createCanvas(400, 400);
+  window.addEventListener("online", on);
 }
 
 /**
@@ -27,11 +28,14 @@ function draw() {
   background("#87ceeb");
   
   // Only increase the score if the game is not over
-  if (!gameOver) {
+  if (!gameOver && !window.navigator.onLine) {
     // Score increases relatively slowly
     score += 0.05;
   }
   displayUI();
+  if (window.navigator.onLine) {
+    gameOver = true;
+  }
 }
 
 /**
@@ -48,6 +52,31 @@ function displayUI() {
   }
   displayScore();
 }
+
+function lose() {
+    gameOver = true;
+}
+
+function mouseWheel() {
+    lose();
+}
+
+function mouseClicked(){
+    lose();
+}
+
+function mousePressed(event){
+    lose();
+}
+
+function keyPressed(event) {
+ lose();
+} 
+
+function on() {
+lose();
+}
+
 
 /**
  * Display the score
