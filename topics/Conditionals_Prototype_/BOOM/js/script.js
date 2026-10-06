@@ -110,7 +110,9 @@ function drawSpark () {
 function drawEndText() {
     if (spark.size >= spark.maxSize) {
         push();
-        fill(255,255,255);
+        fill(255,255,0);
+        stroke(0);
+        strokeWeight(4);
         textSize(50);
         textAlign(CENTER, CENTER);
         text("BOOM! You made your choice.", width / 2, height / 2);
