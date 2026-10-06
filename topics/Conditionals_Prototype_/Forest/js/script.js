@@ -12,6 +12,7 @@
 */
 
 let sunlight = 0; 
+let leafColor;
 
 function setup() {
     createCanvas(640,480);
@@ -24,7 +25,10 @@ function setup() {
 function draw() {
     background(135, 206, 250);
 
+    increaseSunlight();
     checkSunlight ();
+
+    drawSunRays ();
 
     //Sun 
     push();
@@ -67,7 +71,7 @@ function drawTree() {
 
     //Leaves 
    push();
-    fill(60, 130, 70);
+    fill(leafColor);
     noStroke();
 
     // Tree 1
@@ -93,21 +97,49 @@ function drawTree() {
     pop();
 }
 
+function increaseSunlight () {
+    if (mouseIsPressed) {
+        sunlight += 1.5;
+    }
+}
+
 function checkSunlight () {
     if (sunlight < 100) {
         //Green
+        leafColor = color(0, 128, 0);
     }
     
     else if (sunlight < 200) {
         //Yellow
+        leafColor = color(250, 250, 210);
     }
 
     else if (sunlight < 300) {
         //0range
+        leafColor = color(255, 165, 0);
     }
 
     else {
         //Red
+        leafColor = color(255, 0, 0);
     }
 
+}
+
+function drawSunRays () {
+    push();
+    stroke(255,220,70);
+    strokeWeight(5);
+
+    if (sunlight < 100) {
+        line(550, 150, 550, 150 + sunlight);
+        line(520, 140, 520 - sunlight, 140 + sunlight);
+    }
+
+    else {
+        //Rays stops growing 
+        line(550, 150, 550, 250);
+        line(520, 140, 400, 260);
+    }
+    pop();
 }
