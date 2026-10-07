@@ -16,12 +16,12 @@ function setup() {
 }
 
 const fish = {
-    x: 100,
+    x: 15,
     y: 220,
     size: 70,
-    speed: 2
+    speed: 2,
+    massage: 0
 };
-
 
 
 /**
@@ -36,7 +36,10 @@ function draw() {
     
     drawRocks ();
 
+    moveFish ();
+
     drawFish();
+
 }
 
 function drawOceanFloor () {
@@ -86,7 +89,7 @@ function drawFish() {
     noStroke();
 
     //Body
-    fill(255, 99, 71)
+    fill(255, 99, 71);
     ellipse(fish.x, fish.y, fish.size, fish.size / 2);
 
     //Tail 
@@ -97,11 +100,16 @@ function drawFish() {
     );
 
     //Eye
-    fill(255)
+    fill(255);
    circle(fish.x + 22, fish.y - 7, 5);
 
-    fil(0)
-    circle(fish.x + 22, fish.y - 7, 5);
-
     pop();
+ } 
+
+
+function moveFish() {
+    fish.x += fish.speed;
+    //if (fish.x < 350) {
+        //fish.x += fish.speed;
+    //}
 }
