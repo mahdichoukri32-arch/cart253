@@ -2,7 +2,7 @@
  * Fishy
  * Mariam-Choukri Mahdi
  * 
- *A fish is live can be short or long do you want to see, how long it could be ?
+ *A fish can be pretty fast but some time he needs help to slow down.
  */
 
 "use strict";
@@ -25,7 +25,7 @@ const fish = {
 
 
 /**
- * A fish is moving throught the screen in deep sea until it gets eats.
+ * A fish is moving throught the screen in deep sea until it gets tired.
 */
 function draw() {
     background(72, 209, 204);
@@ -36,9 +36,15 @@ function draw() {
     
     drawRocks ();
 
+    increaseMassage ();
+
     moveFish ();
 
+    tiredFish ();
+
     drawFish();
+
+    drawButton ();
 
 }
 
@@ -108,8 +114,54 @@ function drawFish() {
 
 
 function moveFish() {
+    if (fish.massage < 50){
+        fish.speed = 2;
+    }
+    else if (fish.massage < 100){
+        fish.speed = 1.5;
+    }
+    else if (fish.massage < 150) {
+        fish.speed = 0.5;
+    }
+    else {
+        fish.speed = 0;
+    }
+    if (fish.x < 420) {
     fish.x += fish.speed;
-    //if (fish.x < 350) {
-        //fish.x += fish.speed;
-    //}
+    }
+}
+
+function increaseMassage () {
+    if (mouseIsPressed &&
+        mouseX > 75 &&
+        mouseX < 125 &&
+        mouseY > 275 &&
+        mouseY < 325
+    ) {
+        fish.massage += 1;
+    }
+}
+
+function tiredFish () {
+    if (fish.massage >= 150 && fish.y < 320) {
+        fish.y += 0.5;
+    }
+}
+
+function drawButton() {
+    if (fish.massage < 150) {
+    push();
+
+    fill(255);
+    stroke(0);
+    circle(100, 300, 50);
+
+    fill(0);
+    noStroke();
+    textSize(8)
+    textAlign(CENTER, CENTER);
+    text("HOLD", 100, 300);
+
+    pop();
+ }
 }
