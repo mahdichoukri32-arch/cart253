@@ -42,13 +42,7 @@ function draw() {
     //Background 
      background(255,255,255);
     
-    //Wick
-    drawBomb();
-
-    //Boomb
-    drawBomb();
-
-    //Shadow
+    //Bomb
     drawBomb();
 
     //Spark
