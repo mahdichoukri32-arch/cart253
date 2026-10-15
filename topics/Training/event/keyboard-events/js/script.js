@@ -50,6 +50,7 @@ function draw() {
     pop();
 }
 
+//Controls the ball's colour
 function keyPressed(event) {
     if (event.keyCode === ball.keys.redKey) {
     ball.fill = ball.fills.red;
@@ -59,6 +60,7 @@ function keyPressed(event) {
     }
 }
 
+//Reset the ball's colour
 function keyReleased(event) {
     if (event.keyCode === ball.keys.redKey || event.keyCode === ball.keys.blueKey) {
     ball.fill = ball.fills.white; 
