@@ -42,6 +42,14 @@ function draw() {
     increaseGhostlight ();
     checkGhostColor();
 
+    //Moon
+
+    push();
+    fill(230, 230, 250);
+    noStroke();
+    circle(25,30, 100);
+    pop();
+
     drawGhost();
 
     // First tree
@@ -151,6 +159,29 @@ function draw() {
     circle(600, 260, 100);
     pop();
 
+    //Grass 
+
+    push();
+    fill(147, 112, 219);
+    noStroke();
+    rect(0, 450, 800, 50);
+    pop();
+
+    //Rectangle
+     push();
+    fill(0);
+    rect(195, 10, 250, 30);
+    pop();
+
+    // Explanation Text
+    push();
+    fill(255, 255, 255);
+    strokeJoin(5);
+    strokeWeight(10);
+    textAlign(CENTER);
+    text( "Use the left and right arrow to find the ghost", width/2, 30);
+    pop();
+
 }
 
 function drawGhost () {
@@ -158,11 +189,18 @@ function drawGhost () {
     fill(ghostColor);
     noStroke();
     ellipse(ghost.x, ghost.y, ghost.size);
+    rectMode(CENTER)
+    rect(ghost.x, ghost.y + ghost.size / 4, ghost.size, ghost.size / 2);
 
-    //Eyes
-    fill(0);
-    circle(ghost.x + 5, ghost.y - 5, 15)
-    pop();
+    fill(75, 60, 130);
+    let eyeSize = ghost.size / 5;
+    circle(ghost.x - ghost.size / 4, ghost.y - ghost.size / 10, eyeSize); // Left Eyes
+    circle(ghost.x + ghost.size / 4, ghost.y - ghost.size / 10, eyeSize); // Right Eyes
+
+    //circle
+    ellipse(ghost.x, ghost.y + ghost.size / 5, ghost.size / 3, ghost.size / 4);
+    pop()
+
 }
 
 function keyPressed() {
