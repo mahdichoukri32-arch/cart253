@@ -23,6 +23,12 @@ const ghost = {
 
 };
 
+let myFont;
+function preload() {
+    //Load a custom font before the sketch starts 
+    myFont = loadFont('Creepster/Creepster-Regular.ttf'); 
+}
+
 /**
  * Create the playground 
 */
@@ -167,22 +173,18 @@ function draw() {
     rect(0, 450, 800, 50);
     pop();
 
-    //Rectangle
-     push();
-    fill(0);
-    rect(195, 10, 250, 30);
-    pop();
-
     // Explanation Text
     push();
-    fill(255, 255, 255);
-    strokeJoin(5);
+    textFont(myFont);
+    fill(255, 0, 0);
+    textSize(20);
     strokeWeight(10);
     textAlign(CENTER);
     text( "Use the left and right arrow to find the ghost", width/2, 30);
     pop();
 
 }
+
 
 function drawGhost () {
     push();
