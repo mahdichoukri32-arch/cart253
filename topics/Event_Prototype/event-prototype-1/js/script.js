@@ -23,21 +23,30 @@ const ghost = {
 
 };
 
+//Choose a new font 
 let myFont;
+
+//Background music
+let bgm;
+
+let musicStart = false; 
+
 function preload() {
     //Load a custom font before the sketch starts 
     myFont = loadFont('Creepster/Creepster-Regular.ttf'); 
+    bgm = loadSound('assets/sounds/freesound_community-spooky-keys-63764.mp3');
 }
+
+
+
 
 /**
  * Create the playground 
 */
 function setup() {
     createCanvas(640, 480);
-
+    
 }
-
-
 /**
  * Draw a forest and a little ghost 
 */
@@ -206,7 +215,13 @@ function drawGhost () {
 }
 
 function keyPressed() {
-        if (keyIsDown(LEFT_ARROW)) {
+
+    if(!musicStart && bgm.isLoaded()) {
+        bgm.loop();
+        musicStart = true;
+    }
+
+    if (keyIsDown(LEFT_ARROW)) {
             ghost.x -= ghost.speed;
         }
         else if (keyIsDown(RIGHT_ARROW)) {
