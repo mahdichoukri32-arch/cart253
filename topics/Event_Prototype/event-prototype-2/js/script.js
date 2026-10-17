@@ -29,9 +29,25 @@ const egg = {
     x: 200,
     y: 200,
     size: 120, 
-    speed: 2
+    speed: 2,
+    fill: {
+        red: 255,
+        green: 255, 
+        blue: 255
+    }
 };
 
+const yolk = {
+    x: 200,
+    y: 200,
+    size: 50,
+    speed: 2,
+    fill: {
+        red: 255,
+        green: 215,
+        blue: 0
+    }
+}
 /**
  * Draw an egg that will slowly burn if you don't pay attention
 */
@@ -43,6 +59,7 @@ function draw() {
     moveEgg();
     drawPan();
     drawEgg();
+    loopcolor();
 
 
     if (!gameOver) {
@@ -76,26 +93,11 @@ function drawPan() {
 
 function drawEgg() {
     push();
-    translate(egg.x, egg.y);
-
-    // Burning situation
-    let burnLevel = map(egg.y, 180, height - 180, 0, 1);
-    burnLevel = constrain(burnLevel, 0, 1);
-    //burnLevel = constrain(burnLevel, 0, 255);
-    
-    //Burning process of egg 
-    let whiteColor = lerp(255, 20, burnLevel);
-    fill(whiteColor, whiteColor, whiteColor);
+    fill(egg.fill.red, egg.fill.green, egg.fill.blue);
     noStroke();
-    circle(0, 0, egg.size);
-
-    // Burning process of yolk
-    let yolkRed = lerp(255, 20, burnLevel);
-    let yolkGreen = lerp(215, 20, burnLevel); 
-    let yolkBlue = lerp(0, 20, burnLevel); 
-
-    fill(yolkRed, yolkGreen, yolkBlue);
-    circle(0, 0, 50);
+    ellipse(egg.x, egg.y, egg.size);
+    fill(yolk.fill.red, yolk.fill.green, yolk.fill.blue);
+    circle(yolk.x, yolk.y, yolk.size);
     pop();
 }
 
@@ -113,10 +115,24 @@ function movePan() {
 function moveEgg() {
     if (mouseIsPressed) {
         egg.y += egg.speed;
+        yolk.y += yolk.speed;
     }
     else {
         egg.y -= egg.speed;
+        yolk.y -= yolk.speed;
     }
     egg.y = constrain(egg.y, 180, height-180);
+    yolk.y = constrain(yolk.y, 180, height-180);
 }
 
+function loopcolor() {
+    if (mouseIsPressed) {
+        egg.fill.red = constrain(egg.fill.red -1, 0, 255);
+        egg.fill.green = constrain(egg.fill.green -1, 0, 255);
+        egg.fill.blue = constrain(egg.fill.blue -1, 0, 255);
+
+        yolk.fill.red = constrain(yolk.fill.red -1, 0, 255);
+        yolk.fill.green = constrain(yolk.fill.green -1, 0, 255);
+        yolk.fill.blue = constrain(yolk.fill.blue -1, 0, 255);
+    }
+}
