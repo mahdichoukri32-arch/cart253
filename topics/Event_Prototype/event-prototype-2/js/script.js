@@ -126,13 +126,43 @@ function moveEgg() {
 }
 
 function loopcolor() {
-    if (mouseIsPressed) {
-        egg.fill.red = constrain(egg.fill.red -1, 0, 255);
-        egg.fill.green = constrain(egg.fill.green -1, 0, 255);
-        egg.fill.blue = constrain(egg.fill.blue -1, 0, 255);
 
-        yolk.fill.red = constrain(yolk.fill.red -1, 0, 255);
-        yolk.fill.green = constrain(yolk.fill.green -1, 0, 255);
-        yolk.fill.blue = constrain(yolk.fill.blue -1, 0, 255);
+    let currentScore = floor(score);
+
+    //At this point the egg burnt 
+    if (mouseIsPressed) {
+    if (currentScore < 5) {
+        egg.fill.red = 255;
+        egg.fill.green = 255;
+        egg.fill.blue = 255;
+
+        yolk.fill.red = 255;
+        yolk.fill.green = 215; 
+        yolk.fill.blue = 0;
     }
+
+    else if (currentScore >= 5 && currentScore <= 15) {
+        //Eggs turn burn 
+       egg.fill.red = 255;
+       egg.fill.green = 240;
+       egg.fill.blue = 200;
+
+        yolk.fill.red = 255;
+        yolk.fill.green = 180;
+        yolk.fill.blue = 0;
+
+    }
+    else if (currentScore > 15) {
+      egg.fill.red   = constrain(egg.fill.red - 1, 80, 255);
+      egg.fill.green = constrain(egg.fill.green - 1, 80, 255);
+      egg.fill.blue  = constrain(egg.fill.blue - 1, 80, 255);
+
+        yolk.fill.red   = constrain(yolk.fill.red - 1, 100, 255);
+        yolk.fill.green = constrain(yolk.fill.green - 1, 60, 255);
+        yolk.fill.blue  = constrain(yolk.fill.blue - 1, 30, 255);
+    }
+    if (egg.fill.red <= 80) {
+        gameOver = true; 
+    }
+  }
 }
