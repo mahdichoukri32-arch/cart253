@@ -34,7 +34,8 @@ let musicStart = false;
 function preload() {
     //Load a custom font before the sketch starts 
     myFont = loadFont('Creepster/Creepster-Regular.ttf'); 
-    bgm = loadSound('assets/sounds/freesound_community-spooky-keys-63764.mp3');
+    //Load a music when the ghost move 
+    bgm = loadSound("./assets/sounds/freesound_community-spooky-keys-63764.mp3");
 }
 
 
