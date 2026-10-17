@@ -11,11 +11,21 @@
 let score = 0;
 let gameOver = false;
 
+// Background noise 
+
+let noise;
+
+let noiseStart = false;
+
 /**
  * Create a kitchen oven to cook the egg.
 */
 function setup() {
     createCanvas(400, 400);
+}
+
+function preload() {
+    noise = loadSound("./assets/sounds/geriart-fried-eggs-8489.mp3");
 }
 
 const pan = {
@@ -103,6 +113,10 @@ function drawEgg() {
 
 function movePan() {
     if (mouseIsPressed) {
+         if(!noiseStart && noise.isLoaded()) {
+        noise.loop();
+        noiseStart = true;
+    }
         pan.y += pan.speed;
     }
     else {
@@ -131,6 +145,7 @@ function loopcolor() {
 
     //At this point the egg burnt 
     if (mouseIsPressed) {
+        //Egg 
     if (currentScore < 5) {
         egg.fill.red = 255;
         egg.fill.green = 255;
@@ -142,7 +157,7 @@ function loopcolor() {
     }
 
     else if (currentScore >= 5 && currentScore <= 15) {
-        //Eggs turn burn 
+        //Eggs turn great 
        egg.fill.red = 255;
        egg.fill.green = 240;
        egg.fill.blue = 200;
@@ -152,6 +167,8 @@ function loopcolor() {
         yolk.fill.blue = 0;
 
     }
+
+    //Egg turn burnt
     else if (currentScore > 15) {
       egg.fill.red   = constrain(egg.fill.red - 1, 80, 255);
       egg.fill.green = constrain(egg.fill.green - 1, 80, 255);
