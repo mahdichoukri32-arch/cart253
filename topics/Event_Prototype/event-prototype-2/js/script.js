@@ -11,11 +11,18 @@
 let score = 0;
 let gameOver = false;
 
+//Display a title 
+let titleString = "Fried Egg simulator";
+
+let state = "title";
+
+
 // Background noise 
 
 let noise;
 
 let noiseStart = false;
+
 
 /**
  * Create a kitchen oven to cook the egg.
@@ -62,6 +69,11 @@ const yolk = {
  * Draw an egg that will slowly burn if you don't pay attention
 */
 function draw() {
+    //Title 
+     if (state === "title") {
+        title();
+    }
+    else {
     background(100, 149, 237)
 
     displayScore();
@@ -71,13 +83,37 @@ function draw() {
     drawEgg();
     loopcolor();
 
-
     if (!gameOver) {
         push();
         score += 0.05;
         pop();
     }
 
+  }
+
+}
+
+function title () {
+    background(255, 228, 181);
+
+    push();
+    textSize(32)
+    textAlign(CENTER);
+    fill(255, 140, 0);
+    text(titleString, width / 2, height / 2)
+    pop();
+
+    textSize(16);
+    fill(255);
+    text("Click to start cooking", width / 2, height / 2 + 30);
+    pop();
+}
+
+function mousePressed() {
+    //Start the game
+    if(state === "title"){
+        state = "playing";
+    }
 }
 
 function displayScore() {
@@ -179,7 +215,8 @@ function loopcolor() {
         yolk.fill.blue  = constrain(yolk.fill.blue - 1, 30, 255);
     }
     if (egg.fill.red <= 80) {
-        gameOver = true; 
+        gameOver = true;
+        noise.stop();
     }
   }
 }
