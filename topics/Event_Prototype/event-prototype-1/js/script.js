@@ -215,12 +215,13 @@ function drawGhost () {
 }
 
 function keyPressed() {
-
+    //Start the music
     if(!musicStart && bgm.isLoaded()) {
         bgm.loop();
         musicStart = true;
     }
 
+    //Move the ghost
     if (keyIsDown(LEFT_ARROW)) {
             ghost.x -= ghost.speed;
         }
