@@ -13,7 +13,6 @@
 
 //Dramatic Font
 let fontBogle;
-let backgroundImage;
 let stemImage;
 let flowerImage;
 let leavesImage1;
@@ -27,11 +26,13 @@ async function setup() {
     createCanvas(700, 700);
 
     window.addEventListener("offline", function() {
-        isLoaded() = false;
+        isLoaded = false;
+        resizeCanvas(500, 500);
     });
 
     window.addEventListener("online", function() {
-        isOnline() = true;
+        isOnline = true;
+        resizeCanvas(700, 700);
     });
 
 //Dramatic Font charge
@@ -40,7 +41,6 @@ async function setup() {
 
 //Picture making the second part of the project
 
-    backgroundImage = loadImage("./assets/images/grass-background.jpg");
     stemImage = loadImage ("./assets/images/stem.png");
 
     flowerImage = loadImage ("./assets/images/Flower.png");
@@ -215,30 +215,35 @@ function drawText () {
 }
 
 //In a large green field, we discover an amazing and good looking flower to observe
-function drawNatureBackground () {
-    image(backgroundImage, 0, 0, 700, 700);
+function drawNatureBackground() {
+    background(202, 220, 192);
+
+    push();
+    noStroke();
+    fill(245, 230, 160);
+    circle(420, 80, 65);
+    pop();
 }
 
 //A beautiful Violette is being expose aften opening its petals 
 
 function drawNatureFlower() {
+    // Stem - shorter and centered
+    image(stemImage, 236, 210, 30, 200);
 
-    //Stem
-    image(stemImage, 340, 350, 25, 350);
-    //Left leaf
-    image(leavesImage1, 275, 490, 80, 50);
+    // Left leaf
+    image(leavesImage1, 175, 300, 80, 50);
 
-    //Right leaf
-    image(leavesImage2, 355, 580, 80, 50);
+    // Right leaf
+    image(leavesImage2, 250, 350, 100, 60);
 
-    //Flower
-    image(flowerImage, 250, 200, 200, 200);
+    // Flower - larger and more central
+    image(flowerImage, 110, 65, 280, 280);
 }
 
  
 //Tiny grass reveal the purple flower
 function drawGrass() {
-    image(grassImage, 0, 550, 700, 150);
+    image(grassImage, 0, 395, 500, 105);
 }
-
 
