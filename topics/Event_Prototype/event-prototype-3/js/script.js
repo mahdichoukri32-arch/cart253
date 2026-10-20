@@ -11,19 +11,56 @@
  * Create a panting when the reality was not capture by the picture. 
 */
 
+//Dramatic Font
 let fontBogle;
+let backgroundImage;
+let stemImage;
+let flowerImage;
+let leavesImage1;
+let leavesImage2;
+let grassImage;
+
+
+let isOnline = navigator.onLine;
 
 async function setup() {
     createCanvas(700, 700);
+
+    window.addEventListener("offline", function() {
+        isLoaded() = false;
+    });
+
+    window.addEventListener("online", function() {
+        isOnline() = true;
+    });
+
+//Dramatic Font charge
     fontBogle = await
     loadFont('assets/fonts/BBH_Bogle/BBHBogle-Regular.ttf');
+
+//Picture making the second part of the project
+
+    backgroundImage = loadImage("./assets/images/grass-background.jpg");
+    stemImage = loadImage ("./assets/images/stem.png");
+
+    flowerImage = loadImage ("./assets/images/Flower.png");
+
+    leavesImage1 = loadImage ("./assets/images/leaf_1.png");
+
+    leavesImage2 = loadImage ("./assets/images/Leaf_2.png");
+
+    grassImage = loadImage("./assets/images/Grass.png");
+
 }
+
+
 
 
 /**
  * Grey when internet, when offline it show a beautiful background.  
 */
 function draw() {
+    if (isOnline) {
     background(128, 128, 128);
 
     //Draw a whole flower, dull and stoic, lacking of life
@@ -37,6 +74,15 @@ function draw() {
     //Devasting message 
 
     drawText ();
+    } 
+    else {
+        // Draw a beautiful field and a flower being the center
+        drawNatureBackground ();
+        // Draw a charming flower, bright and straight
+        drawNatureFlower();
+        //Draw the grass that seem better than other side 
+        drawGrass();
+    }
 
 }
 
@@ -167,4 +213,32 @@ function drawText () {
     text("The fatal fate of a flower  captuared in a picture",350,120)
     pop();
 }
+
+//In a large green field, we discover an amazing and good looking flower to observe
+function drawNatureBackground () {
+    image(backgroundImage, 0, 0, 700, 700);
+}
+
+//A beautiful Violette is being expose aften opening its petals 
+
+function drawNatureFlower() {
+
+    //Stem
+    image(stemImage, 340, 350, 25, 350);
+    //Left leaf
+    image(leavesImage1, 275, 490, 80, 50);
+
+    //Right leaf
+    image(leavesImage2, 355, 580, 80, 50);
+
+    //Flower
+    image(flowerImage, 250, 200, 200, 200);
+}
+
+ 
+//Tiny grass reveal the purple flower
+function drawGrass() {
+    image(grassImage, 0, 550, 700, 150);
+}
+
 
