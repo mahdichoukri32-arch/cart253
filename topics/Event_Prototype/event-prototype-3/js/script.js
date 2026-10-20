@@ -21,7 +21,6 @@ function setup() {
 function draw() {
     background(128, 128, 128);
 
-
     //Stem
     push();
     stroke(95, 95, 95);
@@ -63,38 +62,50 @@ function draw() {
     
 // Left flames
 
+//Dark flames -background-
+
 fill(150);
-triangle(0, 700, 80, 700, 55, 330);
+triangle(0, 700, 80, 700, 110, 350);
+triangle(30, 700, 125, 700, 135, 430);
+
+
 
 fill(160);
-triangle(0, 700, 110, 700, 135, 380);
+triangle(55, 700, 125, 700, 145, 430);
+triangle(245, 700, 320, 700, 300, 565);
+triangle(125, 700, 175, 700, 195, 430);
 
+
+//Medium grey flames
 
 fill(192, 192, 192);
-triangle(0, 700, 0, 350, 65, 315);
-triangle(0, 700, 70, 700, 125, 420);
+triangle(0, 700, 0, 390, 55, 335);
+triangle(115, 700, 175, 700, 205, 485);
 
+
+//Light grey flames
 
 fill(211, 211, 211);
-triangle(90, 700, 170, 700, 205, 490);
-triangle(175, 700, 245, 700, 265, 560);
-triangle(260, 700, 310, 700, 295, 625);
-
-
+triangle(30, 700, 125, 700, 135, 430);
 
 // Right flames
+
+//Dark flames -background-
 
 fill(150);
 triangle(500, 700, 600, 700, 580, 475);
 
+
 fill(160);
 triangle(525, 700, 650, 700, 525, 420);
 
+//Medium grey flames
 
 fill(192, 192, 192);
-triangle(470, 700, 440, 465, 550, 700);
+//triangle(470, 700, 440, 465, 550, 700);
 triangle(580, 700, 700, 700, 640, 500);
 
+//Light grey flames
 
 fill(211, 211, 211);
 triangle(420, 700, 450, 530, 510, 700);
