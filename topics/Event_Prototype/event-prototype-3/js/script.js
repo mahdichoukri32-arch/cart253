@@ -10,8 +10,13 @@
 /**
  * Create a panting when the reality was not capture by the picture. 
 */
-function setup() {
+
+let fontBogle;
+
+async function setup() {
     createCanvas(700, 700);
+    fontBogle = await
+    loadFont('assets/fonts/BBH_Bogle/BBHBogle-Regular.ttf');
 }
 
 
@@ -156,9 +161,9 @@ pop();
 function drawText () {
     push();
     fill(0);
-    textSize(20);
+    textSize(30);
     textAlign(CENTER);
-    textFont('Courier New');
+    textFont(fontBogle);
     text("The fatal fate of a flower  captuared in a picture",350,120)
     pop();
 }
