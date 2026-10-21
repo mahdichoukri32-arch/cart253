@@ -72,7 +72,6 @@ Maximize your window or zoom out of the page to see the spark.
 [Hide and seek](https://mahdichoukri32-arch.github.io/cart253/topics/Event_Prototype/Hide_and_seek)
 [View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Event_Prototype/Hide_and_seek)
 ![Hide and seek](./topics/Event_Prototype/Image/ghost.png)
-Maximize your window or zoom out of the page to see the spark.
 
 [Cooking Simulator](https://mahdichoukri32-arch.github.io/cart253/topics/Event_Prototype/Cooking_Simulator)
 [View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Event_Prototype/Cooking_Simulator)
@@ -81,3 +80,4 @@ Maximize your window or zoom out of the page to see the spark.
 [Touch Grass](https://mahdichoukri32-arch.github.io/cart253/topics/Event_Prototype/Touch_grass)
 [View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Event_Prototype/Touch_grass)
 ![Flower](./topics/Event_Prototype/Image/gray_flower.png)
+Don't forget to touch the canvas to start the sound for the offline version.
