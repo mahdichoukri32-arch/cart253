@@ -1,25 +1,34 @@
 # cart253
+
 ![Find this gif pretty cool](./topics/Prototyping_Website_/Image/Message_from_another_dimension.gif)
+
 # Welcome to my DIMENSION
+
 Hello, I'm Mariam-Choukri Mahdi, an student in Computation Art program.
 <br>
-**It's not my first time doing coding but this time will be the right one.** 
+**It's not my first time doing coding but this time will be the right one.**
 ![The image represent Lake Assal from my country, Djibouti. It's the 3rd lowest point of the world.](topics/Prototyping_Website_/Image/Lac_Assal.jpg)
 
-This website is for presenting me : my personality, my life and my dreams. 
+This website is for presenting me : my personality, my life and my dreams.
 
-I wish as the website growth, I growth too. They could be mistake done or perfection accomplish. 
+I wish as the website growth, I growth too. They could be mistake done or perfection accomplish.
 No matter what, it’s my dimension and you enter it.
+
 ## Bookmarks of all favorites
+
 ### My journal
+
 [My reflective journal](journal.md)<br>
+
 ### Future Prototypes
-#### Instruction : Prototype 
+
+#### Instruction : Prototype
+
 [Confusion project](https://mahdichoukri32-arch.github.io/cart253/topics/Instruction_Prototype/confusion-project)
 [View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Instruction_Prototype/confusion-project/)
 ![Confusion project image](./topics/Instruction_Prototype/image_2/Confusion.png)
 
-[Did you see the time](https://mahdichoukri32-arch.github.io/cart253/topics/Instruction_Prototype/Time-pass-project/) 
+[Did you see the time](https://mahdichoukri32-arch.github.io/cart253/topics/Instruction_Prototype/Time-pass-project/)
 [View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Instruction_Prototype/Time-pass-project/)
 ![Did you see the time, an screenshot of the day](./topics/Instruction_Prototype/image_2/Day.png)
 ![Did you see the time, an screenshot of the night](./topics/Instruction_Prototype/image_2/Night.png)
@@ -30,6 +39,7 @@ No matter what, it’s my dimension and you enter it.
 ![Screenshot of the balloon after the explosion](./topics/Instruction_Prototype/image_2/Balloon_explosion.png)
 
 ### Variable : Prototype
+
 [Are you eating yourself ?](https://mahdichoukri32-arch.github.io/cart253/topics/Variable_Prototype/pacman-project)
 [View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Variable_Prototype/pacman-project)
 ![Are you eating yourself ?](./topics/Variable_Prototype/image_3/Eat.png)
@@ -42,7 +52,8 @@ No matter what, it’s my dimension and you enter it.
 [View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Variable_Prototype/Do-you-control-it)
 ![Do you control it ?](./topics/Variable_Prototype/image_3/Mouse.png)
 
-## Conditional : Prototype 
+## Conditional : Prototype
+
 [Boom](https://mahdichoukri32-arch.github.io/cart253/topics/Conditionals_Prototype_/BOOM)
 [View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Conditionals_Prototype_/BOOM)
 ![Boom](./topics/Conditionals_Prototype_/image/Boom.png)
@@ -56,3 +67,17 @@ Maximize your window or zoom out of the page to see the spark.
 [View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Conditionals_Prototype_/Fishy)
 ![Fish](./topics/Conditionals_Prototype_/image/Fish.png)
 
+## Event : Prototype
+
+[Hide and seek](https://mahdichoukri32-arch.github.io/cart253/topics/Event_Prototype/Hide_and_seek)
+[View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Event_Prototype/Hide_and_seek)
+![Hide and seek](./topics/Event_Prototype/Image/ghost.png)
+Maximize your window or zoom out of the page to see the spark.
+
+[Cooking Simulator](https://mahdichoukri32-arch.github.io/cart253/topics/Event_Prototype/Cooking_Simulator)
+[View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Event_Prototype/Cooking_Simulator)
+![Egg](./topics/Event_Prototype/Image/egg.png)
+
+[Touch Grass](https://mahdichoukri32-arch.github.io/cart253/topics/Event_Prototype/Touch_grass)
+[View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Event_Prototype/Touch_grass)
+![Flower](./topics/Event_Prototype/Image/gray_flower.png)
