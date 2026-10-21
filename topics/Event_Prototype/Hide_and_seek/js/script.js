@@ -1,5 +1,5 @@
 /**
- * Event Prototype
+ * Hide and seek
  * Mariam-Choukri Mahdi
  *
  * Oscar, a little ghost want to play hide and seek with you but it will take to see him.
