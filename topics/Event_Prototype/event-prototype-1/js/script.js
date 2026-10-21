@@ -232,15 +232,11 @@ function keyPressed() {
 }
 
 function increaseGhostlight() {
-    if(keyPressed) {
-        ghostlight += 1;
-    }
-    if (ghostlight > 255) {
-        ghostlight = 255;
-    }
+   ghostlight = map(ghost.x, 0, 640, 0, 255);
 }
 
 function checkGhostColor(){
+    console.log (ghostlight)
     if(ghostlight < 100) {
     ghostColor = color(75, 60, 130);
     }
