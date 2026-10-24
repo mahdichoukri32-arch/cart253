@@ -34,6 +34,3 @@ function drawSun(x, y, size) {
   ellipse(x, y, size);
   pop();
 }
-/**
- * Draws the first sun
- */
