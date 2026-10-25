@@ -12,41 +12,10 @@
 
 "use strict";
 
-// Ball 1
-const ball1 = {
-  // Position and size
-  x: 100,
-  y: 0,
-  size: 20,
-  // Velocity
-  velocity: {
-    x: 0,
-    y: 4, // Moves down
-  },
-};
-
-// Ball 2 is just like ball1 in a different place with different velocity
-const ball2 = {
-  x: 200,
-  y: -50,
-  size: 20,
-  velocity: {
-    x: 0,
-    y: 5,
-  },
-};
-
-// Ball 3 is just like ball1 and ball2 in a different place
-// with different velocity
-const ball3 = {
-  x: 300,
-  y: -25,
-  size: 20,
-  velocity: {
-    x: 0,
-    y: 6,
-  },
-};
+//Balls
+let ball1 = undefined;
+let ball2 = undefined;
+let ball3 = undefined;
 
 // The paddle the user controls
 const paddle = {
@@ -64,8 +33,29 @@ const paddle = {
 function setup() {
   createCanvas(400, 400);
 
+  //Create the balls
+  ball1 = createBall();
+  ball2 = createBall();
+  ball3 = createBall();
+
   // Position the paddle at the bottom
   paddle.y = height - paddle.height;
+}
+
+//Create a new function which permit to draw our tree ball
+// Position and velocity are random to add more fun to the game
+
+function createBall() {
+  let ball = {
+    x: random(50, width - 50),
+    y: -50,
+    size: 20,
+    velocity: {
+      x: 0,
+      y: random(2, 15),
+    },
+  };
+  return ball;
 }
 
 /**
@@ -100,6 +90,7 @@ function draw() {
 /**
  * Move all balls by its velocity
  */
+
 function moveBall(ball) {
   ball.x += ball.velocity.x;
   ball.y += ball.velocity.y;
@@ -113,23 +104,30 @@ function movePaddle() {
 }
 
 /**
- * Checks if all balls are bouncing off the paddle
+ * Checks if ball1 is bouncing off the paddle
  */
 function checkBallBounce(ball) {
-  // Check if balls overlaps the paddle
-  const overlap =
-    ball.x + ball.size > paddle.x &&
-    ball.x < paddle.x + paddle.width &&
-    ball.y + ball.size > paddle.y &&
-    ball.y < paddle.y + paddle.height;
-  // If there is an overlap, bounce the balls back up
+  // Check if ball1 overlaps the paddle
+  const overlap = checkBallOverlap(ball, paddle);
+  // If there is an overlap, bounce the ball back up
   if (overlap) {
     ball.velocity.y *= -1;
   }
 }
 
+//Check if the ball is changing direction due to the contact with the paddle
+
+function checkBallOverlap(ball, paddle) {
+  let result =
+    ball.x + ball.size > paddle.x &&
+    ball.x < paddle.x + paddle.width &&
+    ball.y + ball.size > paddle.y &&
+    ball.y < paddle.y + paddle.height;
+  return result;
+}
+
 /**
- * Draw 3 balls as a white square
+ * Draw ball 1 as a white square
  */
 function drawBall(ball) {
   push();
