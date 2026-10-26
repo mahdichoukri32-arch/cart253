@@ -19,6 +19,9 @@ let Mercure = {
 
   //Dimensions
   size: 100,
+
+  //Overlap
+  //isClicked: false,
 };
 
 let Venus = {
@@ -33,6 +36,9 @@ let Venus = {
 
   //Dimensions
   size: 150,
+
+  //Overlap
+  //isClicked: false,
 };
 
 let Earth = {
@@ -48,6 +54,9 @@ let Earth = {
 
   //Dimensions
   size: 240,
+
+  //Overlap
+  //isClicked: false,
 };
 
 let March = {
@@ -63,6 +72,9 @@ let March = {
 
   //Dimensions
   size: 230,
+
+  //Overlap
+  //isClicked: false,
 };
 
 let Jupiter = {
@@ -78,6 +90,9 @@ let Jupiter = {
 
   //Dimensions
   size: 390,
+
+  //Overlap
+  //isClicked: false,
 };
 
 let Saturn = {
@@ -93,6 +108,9 @@ let Saturn = {
 
   //Dimensions
   size: 330,
+
+  //Overlap
+  //isClicked: false,
 };
 
 let Uranus = {
@@ -107,6 +125,9 @@ let Uranus = {
 
   //Dimensions
   size: 280,
+
+  //Overlap
+  //isClicked: false,
 };
 
 let Neptune = {
@@ -121,6 +142,9 @@ let Neptune = {
 
   //Dimensions
   size: 280,
+
+  //Overlap
+  //isClicked: false,
 };
 
 let Celestial = undefined;
@@ -242,15 +266,25 @@ function draw() {
 //* twinkle.x += random(-twinkle.celerite, twinkle.celerite);//
 //twinkle.y += random(-twinkle.celerite, twinkle.celerite);}//
 
+function overlap(planet) {
+  let distance = dist(mouseX, mouseY, planet.x, planet.y);
+
+  return distance < planet.size / 2;
+}
+
 function drawPlanet(planet) {
   push();
-  fill(planet.fill);
+  if (overlap(planet)) {
+    fill("#000000");
+  } else {
+    fill(planet.fill);
+  }
+
   stroke(planet.stroke);
   strokeWeight(planet.strokeWeight);
   circle(planet.x, planet.y, planet.size);
   pop();
 }
-
 function drawStars(twinkle) {
   push();
   fill("#E6E6FA");
