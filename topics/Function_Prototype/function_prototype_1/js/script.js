@@ -7,6 +7,27 @@
 
 "use strict";
 
+let mercurySound;
+let venusSound;
+let earthSound;
+let marchSound;
+let jupiterSound;
+let saturnSound;
+let uranusSound;
+let neptuneSound;
+
+function preload() {
+  mercurySound = loadSound("assets/sounds/Do.mp3");
+  venusSound = loadSound("./assets/sounds/Re.mp3");
+  earthSound = loadSound("./assets/sounds/Mi.mp3");
+  marchSound = loadSound("./assets/sounds/Fa.mp3");
+  jupiterSound = loadSound("./assets/sounds/Sol.mp3");
+  saturnSound = loadSound("./assets/sounds/La.mp3");
+  uranusSound = loadSound("./assets/sounds/Si.mp3");
+  neptuneSound = loadSound("./assets/sounds/Do_light.mp3");
+}
+
+//Design of each planet
 let Mercure = {
   //Positions
   x: 80,
@@ -20,8 +41,8 @@ let Mercure = {
   //Dimensions
   size: 100,
 
-  //Overlap
-  //isClicked: false,
+  //Play music
+  wasHovered: false,
 };
 
 let Venus = {
@@ -37,8 +58,8 @@ let Venus = {
   //Dimensions
   size: 150,
 
-  //Overlap
-  //isClicked: false,
+  //Play music
+  wasHovered: false,
 };
 
 let Earth = {
@@ -55,8 +76,8 @@ let Earth = {
   //Dimensions
   size: 240,
 
-  //Overlap
-  //isClicked: false,
+  //Play music
+  wasHovered: false,
 };
 
 let March = {
@@ -73,8 +94,8 @@ let March = {
   //Dimensions
   size: 230,
 
-  //Overlap
-  //isClicked: false,
+  //Play music
+  wasHovered: false,
 };
 
 let Jupiter = {
@@ -91,8 +112,8 @@ let Jupiter = {
   //Dimensions
   size: 390,
 
-  //Overlap
-  //isClicked: false,
+  //Play music
+  wasHovered: false,
 };
 
 let Saturn = {
@@ -109,8 +130,8 @@ let Saturn = {
   //Dimensions
   size: 330,
 
-  //Overlap
-  //isClicked: false,
+  //Play music
+  wasHovered: false,
 };
 
 let Uranus = {
@@ -126,8 +147,8 @@ let Uranus = {
   //Dimensions
   size: 280,
 
-  //Overlap
-  //isClicked: false,
+  //Play music
+  wasHovered: false,
 };
 
 let Neptune = {
@@ -143,10 +164,11 @@ let Neptune = {
   //Dimensions
   size: 280,
 
-  //Overlap
-  //isClicked: false,
+  //Play music
+  wasHovered: false,
 };
 
+//Stars will be randomly generated later on
 let Celestial = undefined;
 let Celestial2 = undefined;
 let Celestial3 = undefined;
@@ -175,6 +197,15 @@ let Celestial20 = undefined;
 function setup() {
   createCanvas(2350, 720);
   background("#483D8B");
+
+  Mercure.sound = mercurySound;
+  Venus.sound = venusSound;
+  Earth.sound = earthSound;
+  March.sound = marchSound;
+  Jupiter.sound = jupiterSound;
+  Saturn.sound = saturnSound;
+  Uranus.sound = uranusSound;
+  Neptune.sound = neptuneSound;
 
   //Many stars shine in the milk ways
   Celestial = createStars();
@@ -207,7 +238,7 @@ function createStars(celerite) {
     //Size (default)
     size: random(5, 20),
   };
-  //Check the distance btween the start and the planet
+  //Check the distance between the start and the planet so it doesn't contact each other
   while (
     dist(twinkle.x, twinkle.y, Mercure.x, Mercure.y) < 90 ||
     dist(twinkle.x, twinkle.y, Venus.x, Venus.y) < 115 ||
@@ -238,6 +269,16 @@ function draw() {
   drawPlanet(Uranus);
   drawPlanet(Neptune);
 
+  //Play music with planet
+  playPlanetSound(Mercure);
+  playPlanetSound(Venus);
+  playPlanetSound(Earth);
+  playPlanetSound(March);
+  playPlanetSound(Jupiter);
+  playPlanetSound(Saturn);
+  playPlanetSound(Uranus);
+  playPlanetSound(Neptune);
+
   //Stars dust
   drawStars(Celestial);
   drawStars(Celestial2);
@@ -261,30 +302,43 @@ function draw() {
   drawStars(Celestial20);
 }
 
-// Made the stars appear everywhere in the drawings *
-// function moveStars() {
-//* twinkle.x += random(-twinkle.celerite, twinkle.celerite);//
-//twinkle.y += random(-twinkle.celerite, twinkle.celerite);}//
-
+// Made the planet change colour when you pass trought it, helpful to made undersant the piano working
 function overlap(planet) {
   let distance = dist(mouseX, mouseY, planet.x, planet.y);
 
   return distance < planet.size / 2;
 }
 
+function mousePressed() {
+  userStartAudio();
+}
+
+function playPlanetSound(planet) {
+  if (overlap(planet)) {
+    if (planet.wasHovered === false) {
+      planet.sound.play();
+      planet.wasHovered = true;
+    }
+  } else {
+    planet.wasHovered = false;
+  }
+}
+//Drawing of 8 planet of our solar system
 function drawPlanet(planet) {
   push();
+  //Overlap function to change colour
   if (overlap(planet)) {
     fill("#000000");
   } else {
     fill(planet.fill);
   }
-
   stroke(planet.stroke);
   strokeWeight(planet.strokeWeight);
   circle(planet.x, planet.y, planet.size);
   pop();
 }
+
+//Drawing of the stars in the space surrounding the planet
 function drawStars(twinkle) {
   push();
   fill("#E6E6FA");
