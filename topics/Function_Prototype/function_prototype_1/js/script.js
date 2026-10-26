@@ -7,12 +7,36 @@
 
 "use strict";
 
+//const Sun = {
+//Positions
+//x: ,
+//y: ,
+//Dimension
+//size:
+//};
+
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * Create the canvas
  */
-function setup() {}
+function setup() {
+  createCanvas(1280, 720);
+}
 
 /**
  * I will draw each of the eight planet of solar system, each planet is more far away of the sun. A section can be created to showcase the information and the little animation what the planet.
  */
-function draw() {}
+function draw() {
+  background("#483D8B");
+}
+
+//function moveSun() {
+
+//}
+
+//** function drawSun() {
+//push();
+//fill();
+//noStroke();
+//circle();
+//pop();
+//}
