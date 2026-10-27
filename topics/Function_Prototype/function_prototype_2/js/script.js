@@ -10,31 +10,40 @@
 let spaceship1 = {
   //Positions
   x: 150,
-  y: 80,
+  y: 50,
   //Dimensions
   size: 100,
   //Colour
   fill: "#00ffff",
+
+  //Velocity
+  celerite: 2,
 };
 
 let spaceship2 = {
   //Positions
   x: 300,
-  y: 80,
+  y: 50,
   //Dimensions
   size: 100,
   //Colour
   fill: "#ffb700",
+
+  //Velocity
+  celerite: 2,
 };
 
 let spaceship3 = {
   //Position
   x: 450,
-  y: 80,
+  y: 50,
   //Dimensions
   size: 100,
   //Colour
   fill: "#ff00a6",
+
+  //Velocity
+  celerite: 2,
 };
 
 /**
@@ -42,6 +51,10 @@ let spaceship3 = {
  */
 function setup() {
   createCanvas(600, 600);
+
+  spaceship1.celerite = random(3, 3);
+  spaceship2.celerite = random(3, 3);
+  spaceship3.celerite = random(3, 3);
 }
 
 /**
@@ -75,11 +88,23 @@ function drawBarrierSection(x, y, spacing) {
   drawBarrier(x, y + spacing * 11);
   drawBarrier(x, y + spacing * 12);
 
+  //Drive spaceships
+  if (frameCount > 120) {
+    moveSpaceship(spaceship1);
+    moveSpaceship(spaceship2);
+    moveSpaceship(spaceship3);
+  }
+
   //Draw three flying saucer
   drawSpaceship(spaceship1);
   drawSpaceship(spaceship2);
   drawSpaceship(spaceship3);
 }
+
+/**
+ * Drive the spaceship at different speed like wich winner will one
+ * With random number, the speed will be uncotrolled and thus umprecidcatble
+ */
 
 //The visual look of the barrier : meteroid
 function drawBarrier(x, y) {
@@ -89,6 +114,10 @@ function drawBarrier(x, y) {
   strokeWeight(2);
   ellipse(x, y, 25, 40);
   pop();
+}
+
+function moveSpaceship(ship) {
+  ship.y += ship.celerite;
 }
 
 function drawSpaceship(ship) {
