@@ -15,15 +15,16 @@ let translateButton;
  * Create an Canvas
  */
 function setup() {
-  createCanvas(640, 460);
+  createCanvas(640, 640);
 
   userInput = createInput("");
   userInput.attribute("id", "alien-input");
-  userInput.position(320, 230);
+  userInput.position(220, 230);
+  userInput.size(180);
 
   translateButton = createButton("Translate");
-  translateButton.position(350, 250);
-  translateButton.mousePressed(translate);
+  translateButton.position(350, 300);
+  translateButton.mousePressed(translateText);
 }
 
 /**
@@ -33,22 +34,36 @@ function draw() {
   //An green background face new, stuff become scpacy
   background("#00ff9d");
 
+  //An title screen
+  push();
   fill("#4d6aff");
-  textAlign(CENTER);
+  textAlign(CENTER, CENTER);
   textSize(24);
-  text("Alien Translator", width / 2, 150);
+  text("Alien Translator", width / 2, 100);
+  pop();
 
-  fill("#ffec70");
-  textSize(30);
-  text(alienText, width / 2, 400);
+  //An devices to showed up the translation
+  push();
+  stroke("#ffec70");
+  strokeWeight(10);
+  fill("#000000");
+  rect(140, 380, 400, 150, 20);
+  pop();
+
+  //An translation
+  push();
+  fill("#ff00b7");
+  stroke("#8d4478");
+  strokeWeight(5);
+  textSize(75);
+  text(alienText, width / 2.3, 490);
+  pop();
 }
 
-function translate() {
-  console.log("Button clicked!");
-
+function translateText() {
+  console.log(alienText);
   if (userInput.value() !== "") {
     alienText = createAlienText();
-    console.log(alienText);
   }
 }
 
@@ -87,4 +102,5 @@ function createAlienText() {
     ]),
   };
   return alien.first + alien.second;
+  console.log();
 }
