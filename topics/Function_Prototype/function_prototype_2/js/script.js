@@ -7,11 +7,36 @@
 
 "use strict";
 
-//let spaceship 1 = {
-//x: ,
-//y: ,
-//size: ,
-//}
+let spaceship1 = {
+  //Positions
+  x: 150,
+  y: 80,
+  //Dimensions
+  size: 100,
+  //Colour
+  fill: "#00ffff",
+};
+
+let spaceship2 = {
+  //Positions
+  x: 300,
+  y: 80,
+  //Dimensions
+  size: 100,
+  //Colour
+  fill: "#ffb700",
+};
+
+let spaceship3 = {
+  //Position
+  x: 450,
+  y: 80,
+  //Dimensions
+  size: 100,
+  //Colour
+  fill: "#ff00a6",
+};
+
 /**
  * Create a inifite race track
  */
@@ -49,6 +74,11 @@ function drawBarrierSection(x, y, spacing) {
   drawBarrier(x, y + spacing * 10);
   drawBarrier(x, y + spacing * 11);
   drawBarrier(x, y + spacing * 12);
+
+  //Draw three flying saucer
+  drawSpaceship(spaceship1);
+  drawSpaceship(spaceship2);
+  drawSpaceship(spaceship3);
 }
 
 //The visual look of the barrier : meteroid
@@ -58,5 +88,19 @@ function drawBarrier(x, y) {
   stroke("#816363");
   strokeWeight(2);
   ellipse(x, y, 25, 40);
+  pop();
+}
+
+function drawSpaceship(ship) {
+  push();
+
+  //Cockpit -> half circle
+  fill("#A5D8F3");
+  arc(ship.x, ship.y, 60, 60, PI, TWO_PI, CHORD);
+
+  //Body of the spaceship
+  fill(ship.fill);
+  ellipse(ship.x, ship.y, ship.size, 30);
+
   pop();
 }
