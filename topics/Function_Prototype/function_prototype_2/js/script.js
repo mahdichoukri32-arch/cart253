@@ -52,9 +52,9 @@ let spaceship3 = {
 function setup() {
   createCanvas(600, 600);
 
-  spaceship1.celerite = random(3, 3);
-  spaceship2.celerite = random(3, 3);
-  spaceship3.celerite = random(3, 3);
+  spaceship1.celerite = random(2, 3);
+  spaceship2.celerite = random(2, 3);
+  spaceship3.celerite = random(2, 3);
 }
 
 /**
