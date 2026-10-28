@@ -84,7 +84,7 @@ Don't forget to touch the canvas to start the sound for the offline version.
 
 ## Function : Prototype
 
-[Space_Piano](https://mahdichoukri32-arch.github.io/cart253/topics/Function_Prototype/Space_Piano)
+[Space Piano](https://mahdichoukri32-arch.github.io/cart253/topics/Function_Prototype/Space_Piano)
 [View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Function_Prototype/Space_Piano)
 ![Space Piano](./topics/Function_Prototype/Image/Space_Piano.png)
 
