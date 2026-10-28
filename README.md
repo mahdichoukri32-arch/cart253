@@ -89,7 +89,7 @@ Don't forget to touch the canvas to start the sound for the offline version.
 ![Space Piano](./topics/Function_Prototype/Image/Space_Piano.png)
 
 [Spaceship](https://mahdichoukri32-arch.github.io/cart253/topics/Function_Prototype/Spaceship)
-[View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Function_Prototype/paceship)
+[View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Function_Prototype/Spaceship)
 ![Spaceship](./topics/Function_Prototype/Image/SpaceShip.png)
 
 [Alien Translator](https://mahdichoukri32-arch.github.io/cart253/topics/Function_Prototype/Alien_Translator)
