@@ -10,6 +10,11 @@
 let userInput;
 let alienText = "";
 let translateButton;
+let alienStyle;
+
+function preload() {
+  alienStyle = loadFont("./assets/fonts/Alien_Block/AlienBlock-Regular.ttf");
+}
 
 /**
  * Create an Canvas
@@ -23,7 +28,7 @@ function setup() {
   userInput.size(180);
 
   translateButton = createButton("Translate");
-  translateButton.position(350, 300);
+  translateButton.position(350, 280);
   translateButton.mousePressed(translateText);
 }
 
@@ -36,9 +41,10 @@ function draw() {
 
   //An title screen
   push();
+  textFont(alienStyle);
   fill("#4d6aff");
   textAlign(CENTER, CENTER);
-  textSize(24);
+  textSize(50);
   text("Alien Translator", width / 2, 100);
   pop();
 
