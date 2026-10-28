@@ -10,6 +10,8 @@
 //Using a sound to point out the depature
 let startSound;
 
+let raceStartFrame = -1;
+
 let spaceship1 = {
   //Positions
   x: 150,
@@ -73,17 +75,20 @@ function draw() {
   // Deep cosmos around the spaceship
   background("#1c0030");
 
-  //Drive spaceships
-  if (frameCount > 120) {
-    moveSpaceship(spaceship1);
-    moveSpaceship(spaceship2);
-    moveSpaceship(spaceship3);
+  //Depature sound started at this moment
+  if (raceStartFrame !== -1) {
+    if (frameCount === raceStartFrame + 60) {
+      startSound.play();
+    }
+
+    //Drive spaceships
+    if (frameCount > raceStartFrame + 120) {
+      moveSpaceship(spaceship1);
+      moveSpaceship(spaceship2);
+      moveSpaceship(spaceship3);
+    }
   }
 
-  //Depature sound started at this moment
-  if (frameCount === 60) {
-    startSound.play();
-  }
   // The barier to separate the spaceship to the rest
 
   // Left barrier
@@ -133,6 +138,14 @@ function drawBarrier(x, y) {
 //Made the spaceship take parts of the race
 function moveSpaceship(ship) {
   ship.y += ship.celerite;
+}
+
+// Made the sound started without difficulty
+function mousePressed() {
+  if (raceStartFrame === -1) {
+    userStartAudio();
+    raceStartFrame = frameCount;
+  }
 }
 
 //Draw three different flyings jars as our participant to this race
