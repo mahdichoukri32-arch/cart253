@@ -69,3 +69,20 @@ Through these projects, I hope people can first experience enjoyment and enterta
 In the future, I would like to develop more interactive experiences where the user becomes the main character of their own journey, making decisions that influence the story instead of simply observing it.
 
 ![A screenshot](./topics/Event_Prototype/Image/life.png)
+
+# 2026/10/27
+
+This week, I rediscovered the concept of functions and learned how they can expand my ability to create projects that I previously would have found difficult to code. Functions also helped me organize my code, reduce repetition, and make it easier to understand.
+
+What surprised me the most was how quickly I could create multiple objects using functions. This was particularly useful in my Space Piano prototype. Instead of writing separate drawing instructions for every planet, I created a drawPlanet() function and called it with each planet's data. This made my code much more readable and easier to modify. I also used functions to generate stars in the background, allowing me to randomize their positions without rewriting the drawing instructions for each star.
+
+The most challenging part of this week's work was understanding how to use functions with return values to generate data, especially in my final prototype, Alien Translator. I struggled to connect the HTML text input and button to my p5.js program because I wanted users to enter their own words and receive a fictional alien translation. I also discovered that positioning and styling HTML elements alongside a p5.js canvas required a different approach from drawing directly on the canvas. This project became an exercise in adaptation and problem-solving. By using randomized alien symbols and a function with a return value, I created a generator that produces fictional translations based on the user's interaction.
+
+Beyond the technical aspects, I wanted each prototype to have its own artistic identity. For Space Piano, the arrangement of the planets inspired me to transform the solar system into a musical instrument. The visual changes when hovering over a planet make the interaction more intuitive and engaging.
+
+In Spaceship, I decided to delay the beginning of the race so users would have time to choose which spaceship to support. Each spaceship has a different colour, making it easier to identify. By assigning random velocities, I made the outcome unpredictable, adding excitement to the competition.
+
+Through these three projects, I hope users can rediscover some of the elements that make space fascinating: our solar system, spaceships, and the possibility of extraterrestrial life.
+
+In the future, I would like to explore functions with parameters more deeply, not only to simplify my coding process but also to make more complex and interactive ideas easier to develop.
+![A screenshot](./topics/Function_Prototype/Image/Example.png)
