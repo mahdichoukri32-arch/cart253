@@ -2,11 +2,12 @@
  * Solar System
  * Mariam-Choukri Mahdi
  *
- * A project represent  the full solar system and learn a silly fun fact about sun and planets
+ * A project represent  the full solar system and use each planet to made piano.
  */
 
 "use strict";
 
+//The music that we will use to made our piano
 let mercurySound;
 let venusSound;
 let earthSound;
@@ -15,6 +16,9 @@ let jupiterSound;
 let saturnSound;
 let uranusSound;
 let neptuneSound;
+
+//The sounds file are the seven music notes of classic piano: "Do, Ré, Mi, Fa, Sol, La, Si".
+// And I added an hight do to fit the humber of planet.
 
 function preload() {
   mercurySound = loadSound("assets/sounds/Do.mp3");
@@ -168,7 +172,7 @@ let Neptune = {
   wasHovered: false,
 };
 
-//Stars will be randomly generated later on
+//Stars will are randomly generated to feel like the whole galaxy and its uncernaity
 let Celestial = undefined;
 let Celestial2 = undefined;
 let Celestial3 = undefined;
@@ -198,6 +202,7 @@ function setup() {
   createCanvas(2350, 720);
   background("#483D8B");
 
+  // The music notes will be different for each planet passing trough it
   Mercure.sound = mercurySound;
   Venus.sound = venusSound;
   Earth.sound = earthSound;
@@ -309,10 +314,12 @@ function overlap(planet) {
   return distance < planet.size / 2;
 }
 
+//Start using the piano music sound
 function mousePressed() {
   userStartAudio();
 }
 
+//To connect the piano sound to the the planet
 function playPlanetSound(planet) {
   if (overlap(planet)) {
     if (planet.wasHovered === false) {
