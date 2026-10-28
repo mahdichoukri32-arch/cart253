@@ -7,6 +7,9 @@
 
 "use strict";
 
+//Using a sound to point out the depature
+let startSound;
+
 let spaceship1 = {
   //Positions
   x: 150,
@@ -47,8 +50,14 @@ let spaceship3 = {
 };
 
 /**
- * Create a inifite race track
+ * Create a inifite race track, with meteroid barrier trough the victory the three spaceship team want to atteign
  */
+
+//Add the depature sound
+function preload() {
+  startSound = loadSound("./assets/sounds/depature.mp3");
+}
+
 function setup() {
   createCanvas(600, 600);
 
@@ -63,6 +72,18 @@ function setup() {
 function draw() {
   // Deep cosmos around the spaceship
   background("#1c0030");
+
+  //Drive spaceships
+  if (frameCount > 120) {
+    moveSpaceship(spaceship1);
+    moveSpaceship(spaceship2);
+    moveSpaceship(spaceship3);
+  }
+
+  //Depature sound started at this moment
+  if (frameCount === 60) {
+    startSound.play();
+  }
   // The barier to separate the spaceship to the rest
 
   // Left barrier
@@ -70,6 +91,11 @@ function draw() {
 
   //Right barrier
   drawBarrierSection(550, 65, 45);
+
+  //Draw three flying saucer
+  drawSpaceship(spaceship1);
+  drawSpaceship(spaceship2);
+  drawSpaceship(spaceship3);
 }
 
 //To repeat the meteroid to right and to left making a barrier
@@ -87,18 +113,6 @@ function drawBarrierSection(x, y, spacing) {
   drawBarrier(x, y + spacing * 10);
   drawBarrier(x, y + spacing * 11);
   drawBarrier(x, y + spacing * 12);
-
-  //Drive spaceships
-  if (frameCount > 120) {
-    moveSpaceship(spaceship1);
-    moveSpaceship(spaceship2);
-    moveSpaceship(spaceship3);
-  }
-
-  //Draw three flying saucer
-  drawSpaceship(spaceship1);
-  drawSpaceship(spaceship2);
-  drawSpaceship(spaceship3);
 }
 
 /**
@@ -116,10 +130,12 @@ function drawBarrier(x, y) {
   pop();
 }
 
+//Made the spaceship take parts of the race
 function moveSpaceship(ship) {
   ship.y += ship.celerite;
 }
 
+//Draw three different flyings jars as our participant to this race
 function drawSpaceship(ship) {
   push();
 
