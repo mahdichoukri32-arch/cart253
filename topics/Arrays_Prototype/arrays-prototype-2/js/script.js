@@ -71,8 +71,23 @@ function draw() {
   rect(280, 465, 100, 80, 8);
   pop();
 
+  //Miror Framework
+  push();
+  fill("#66CDAA");
+  noStroke();
+  rect(75, 50, 500, 300);
+  pop();
+
+  //Miror
+  push();
+  fill("211, 255, 240, 100");
+  noStroke();
+  rect(85, 60, 480, 280);
+  pop();
+
   for (let bubble of bubbles) {
     drawBuble(bubble);
+    drawReflecction(bubble);
     moveBuble(bubble);
   }
 }
@@ -104,5 +119,23 @@ function mousePressed() {
     bubbles.push(newBubble);
 
     bubbleSound.play();
+  }
+}
+
+function drawReflecction(bubble) {
+  let reflectionX = 650 - bubble.x;
+  let reflectionY = bubble.y;
+
+  if (
+    reflectionX >= 85 &&
+    reflectionX <= 565 &&
+    reflectionY >= 60 &&
+    reflectionY <= 340
+  ) {
+    push();
+    fill(211, 255, 240, 100);
+    noStroke();
+    circle(reflectionX, reflectionY, bubble.size);
+    pop();
   }
 }
