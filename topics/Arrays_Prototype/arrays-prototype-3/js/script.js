@@ -1,24 +1,24 @@
 /**
- * Title of Project
- * Author Name
- * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * Bubble Tea
+ * Mariam-Choukri Mahdi
+ *
+ * Are you be able to eat all tapioca buble in your brown sugar tea !
  */
 
 "use strict";
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
-*/
+ * Create a canvas
+ */
 function setup() {
-
+  createCanvas(640, 640);
 }
 
-
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
-*/
+ * I draw a bubble tea drink where you will find tapioca bubles.
+ * You like tapioca bubbles, this time you want them to disappear so you drink the delicious tea.
+ * Maybe this time, the tapioca were not well conserve.
+ */
 function draw() {
-
+  background("#d3ffd3");
 }
