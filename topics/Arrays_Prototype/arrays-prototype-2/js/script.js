@@ -7,6 +7,9 @@
 
 "use strict";
 
+//Bubble are starting around the soap
+let bubbles = [];
+
 /**
  * Create a Canvas
  */
@@ -14,8 +17,19 @@ function setup() {
   createCanvas(640, 640);
 }
 
+function createBubble() {
+  // Return a random buble
+  let bubble = {
+    x: random(290, 370),
+    y: 465,
+    size: 20,
+    float: random(2, 8),
+  };
+  return bubble;
+}
+
 /**
- * An bright pink foaming soap near by a water source
+ * An bright pink soap on a water inside in bathtub
  */
 function draw() {
   background("#B0E0E6");
@@ -49,4 +63,33 @@ function draw() {
   strokeWeight(2);
   rect(280, 465, 100, 80, 8);
   pop();
+
+  for (let bubble of bubbles) {
+    drawBuble(bubble);
+    moveBuble(bubble);
+  }
+}
+
+/**
+ * The soap is foaming and bubble start to come
+ */
+
+//Bubble are floating to the room
+
+function moveBuble(bubble) {
+  bubble.y -= bubble.float;
+}
+
+//Bubble took live
+function drawBuble(bubble) {
+  push();
+  fill("#ffc3e3");
+  noStroke();
+  circle(bubble.x, bubble.y, bubble.size);
+  pop();
+}
+
+function mousePressed() {
+  const newBubble = createBubble();
+  bubbles.push(newBubble);
 }
