@@ -7,8 +7,15 @@
 
 "use strict";
 
+// Sound of bursting buble are comming
+let bubbleSound;
+
 //Bubble are starting around the soap
 let bubbles = [];
+
+function preload() {
+  bubbleSound = loadSound("assets/sounds/bubble.mp3");
+}
 
 /**
  * Create a Canvas
@@ -90,6 +97,9 @@ function drawBuble(bubble) {
 }
 
 function mousePressed() {
+  userStartAudio();
   const newBubble = createBubble();
   bubbles.push(newBubble);
+
+  bubbleSound.play();
 }
