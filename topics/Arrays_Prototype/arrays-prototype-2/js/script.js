@@ -98,8 +98,10 @@ function drawBuble(bubble) {
 
 function mousePressed() {
   userStartAudio();
-  const newBubble = createBubble();
-  bubbles.push(newBubble);
+  if (mouseX >= 280 && mouseX <= 380 && mouseY >= 465 && mouseY <= 545) {
+    const newBubble = createBubble();
+    bubbles.push(newBubble);
 
-  bubbleSound.play();
+    bubbleSound.play();
+  }
 }
