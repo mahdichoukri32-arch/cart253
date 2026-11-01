@@ -27,7 +27,7 @@ function setup() {
 function createBubble() {
   // Return a random buble
   let bubble = {
-    x: random(290, 370),
+    x: constrain(mouseX, 290, 370),
     y: 465,
     size: 20,
     float: random(2, 8),
