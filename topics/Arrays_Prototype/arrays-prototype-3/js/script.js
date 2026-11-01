@@ -21,4 +21,34 @@ function setup() {
  */
 function draw() {
   background("#d3ffd3");
+
+  //Tea
+  push();
+  fill("#ffbd84");
+  noStroke();
+  quad(145, 280, 495, 280, 460, 620, 180, 620);
+  pop();
+
+  //Straw
+  push();
+  fill("#ff69b4");
+  noStroke();
+  rect(300, 40, 35, 450);
+  pop();
+
+  //Cup
+  push();
+  fill(255, 255, 255, 30);
+  stroke("#c0e7ff");
+  strokeWeight(5);
+  arc(320, 280, 350, 350, PI, TWO_PI, CHORD);
+  pop();
+
+  //Tea cup
+  push();
+  fill(255, 255, 255, 30);
+  stroke("#c0e7ff");
+  strokeWeight(5);
+  quad(145, 280, 495, 280, 460, 620, 180, 620);
+  pop();
 }
