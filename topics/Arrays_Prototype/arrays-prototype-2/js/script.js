@@ -96,6 +96,7 @@ function drawBuble(bubble) {
   pop();
 }
 
+//User interact with the soap
 function mousePressed() {
   userStartAudio();
   if (mouseX >= 280 && mouseX <= 380 && mouseY >= 465 && mouseY <= 545) {
