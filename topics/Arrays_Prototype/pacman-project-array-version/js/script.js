@@ -14,7 +14,7 @@ let pacmans = [
     y: 50,
     fill: "#ffff00",
     size: 65,
-    velocity: -3,
+    velocity: -1,
     direction: "left",
   },
 
@@ -24,7 +24,7 @@ let pacmans = [
     y: 150,
     fill: "#ffa500",
     size: 65,
-    velocity: 3,
+    velocity: 5,
     direction: "right",
   },
 
@@ -34,7 +34,7 @@ let pacmans = [
     y: 250,
     fill: "#ff0000",
     size: 65,
-    velocity: -3,
+    velocity: -1.5,
     direction: "left",
   },
 
@@ -44,7 +44,7 @@ let pacmans = [
     y: 250,
     fill: "#ff0000",
     size: 65,
-    velocity: 3,
+    velocity: 4,
     direction: "right",
   },
 ];
@@ -57,6 +57,7 @@ let pains = [
     fill: "#ff00ff",
     size: 20,
     velocity: -3,
+    direction: "left",
   },
 
   // The point 2
@@ -66,6 +67,7 @@ let pains = [
     fill: "#ff00ff",
     size: 20,
     velocity: 3,
+    direction: "right",
   },
 ];
 
