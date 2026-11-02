@@ -119,9 +119,9 @@ function title() {
   background("#d3ffd3");
 
   push();
-  fill("#201002");
+  fill("#6f9e6f");
   noStroke();
-  textFont();
+  textFont(Bobastyle);
   textSize(26);
   textAlign(CENTER, CENTER);
 
