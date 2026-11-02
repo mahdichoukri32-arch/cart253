@@ -7,10 +7,28 @@
 
 "use strict";
 
+//The pearl that will appear
 let pearls = [];
 
+//The straw that will move
 let strawX = 320;
 let strawY = 450;
+
+//Display a title
+let titleString =
+  "BUBLE TEA\n\nUse the arrow keys to pop the tapioca pearls!\n\nPress ENTER to start";
+let state = "title";
+
+//The font style
+let Bobastyle;
+
+//Added a font to give this program a more game related look
+function preload() {
+  Bobastyle = loadFont(
+    "./assets/fonts/Redaction_35/Redaction35-Regular-Regular.otf",
+  );
+}
+
 /**
  * Create a canvas
  */
@@ -42,53 +60,77 @@ function createPearls() {
  * Maybe this time, the tapioca were not well conserve.
  */
 function draw() {
+  //Title
+  if (state === "title") {
+    title();
+  } else if (state === "playing") {
+    // Background of your boba shop
+    background("#d3ffd3");
+
+    //Tea
+    push();
+    fill("#ffbd84");
+    noStroke();
+    quad(145, 280, 495, 280, 460, 620, 180, 620);
+    pop();
+
+    //Tapioca Pearl and it's movement
+    for (let pearl of pearls) {
+      drawPearl(pearl);
+    }
+
+    if (frameCount % 60 === 0) {
+      const newPearl = createPearls();
+      pearls.push(newPearl);
+      console.log(pearls.length);
+    }
+
+    //Straw
+    moveStraw();
+
+    //Pop pearls
+
+    popPearls();
+    drawStraw();
+
+    //Cup
+    push();
+    fill(255, 255, 255, 30);
+    stroke("#c0e7ff");
+    strokeWeight(5);
+    arc(320, 280, 350, 350, PI, TWO_PI, CHORD);
+    pop();
+
+    //Tea cup
+    push();
+    fill(255, 255, 255, 30);
+    stroke("#c0e7ff");
+    strokeWeight(5);
+    quad(145, 280, 495, 280, 460, 620, 180, 620);
+    pop();
+  }
+}
+
+// Start the game
+function title() {
   background("#d3ffd3");
 
-  //Tea
   push();
-  fill("#ffbd84");
-  noStroke();
-  quad(145, 280, 495, 280, 460, 620, 180, 620);
-  pop();
+  fill("#90EE90");
+  textFont(Bobastyle);
+  textSize(32);
+  textAlign(CENTER, CENTER);
 
-  //Tapioca Pearl and it's movement
-  for (let pearl of pearls) {
-    drawPearl(pearl);
-  }
-
-  if (frameCount % 60 === 0) {
-    const newPearl = createPearls();
-    pearls.push(newPearl);
-    console.log(pearls.length);
-  }
-
-  //Straw
-  moveStraw();
-
-  //Pop pearls
-
-  popPearls();
-  drawStraw();
-
-  //Cup
-  push();
-  fill(255, 255, 255, 30);
-  stroke("#c0e7ff");
-  strokeWeight(5);
-  arc(320, 280, 350, 350, PI, TWO_PI, CHORD);
-  pop();
-
-  //Tea cup
-  push();
-  fill(255, 255, 255, 30);
-  stroke("#c0e7ff");
-  strokeWeight(5);
-  quad(145, 280, 495, 280, 460, 620, 180, 620);
+  text(titleString, width / 2, height / 2, 500);
   pop();
 }
 
+function keyPressed() {
+  if (state === "title" && keycode === ENTER) {
+    state = "playing";
+  }
+}
 //Bubble Tapioca
-
 function drawPearl(pearl) {
   push();
   fill("#201002");
@@ -98,6 +140,7 @@ function drawPearl(pearl) {
   pop();
 }
 
+// Make the Straw move
 function moveStraw() {
   // Move left
   if (keyIsDown(LEFT_ARROW)) {
