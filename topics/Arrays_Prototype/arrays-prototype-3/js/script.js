@@ -116,7 +116,8 @@ function title() {
   background("#d3ffd3");
 
   push();
-  fill("#90EE90");
+  fill("#201002");
+  noStroke();
   textFont("Arial");
   textSize(32);
   textAlign(CENTER, CENTER);
@@ -126,7 +127,7 @@ function title() {
 }
 
 function keyPressed() {
-  if (state === "title" && keycode === ENTER) {
+  if (state === "title" && keyCode === ENTER) {
     state = "playing";
   }
 }
