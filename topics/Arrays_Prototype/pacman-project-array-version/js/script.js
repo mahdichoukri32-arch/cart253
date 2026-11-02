@@ -49,35 +49,37 @@ let pacmans = [
   },
 ];
 
-// The point
-let point = [
+// The Pain that stressed you out
+let pains = [
   {
     x: 370.5,
     y: 50,
-    width: 20,
-    height: 20,
+    fill: "#ff00ff",
+    size: 20,
+    velocity: -3,
   },
 
   // The point 2
   {
     x: -470.5,
     y: 150,
-    width: 20,
-    height: 20,
+    fill: "#ff00ff",
+    size: 20,
+    velocity: 3,
   },
 ];
 
-//Text
+// //Text
 
-let message = {
-  x: 450,
-  y: 50,
-};
+// let message = {
+//   x: 450,
+//   y: 50,
+// };
 
-let message2 = {
-  x: -680,
-  y: 150,
-};
+// let message2 = {
+//   x: -680,
+//   y: 150,
+// };
 
 /**
  * Create a canvas
@@ -92,19 +94,22 @@ function setup() {
 function draw() {
   background(0);
 
-  // Write a text that follow it
-  push();
-  fill(255, 0, 255);
-  strokeWeight(2);
-  text("ARE YOU EATING YOURSELF ?", message.x, message.y);
-  text("ARE YOU EATING YOURSELF ?", message2.x, message2.y);
-  pop();
+  // // Write a text that follow it
+  // push();
+  // fill(255, 0, 255);
+  // strokeWeight(2);
+  // text("ARE YOU EATING YOURSELF ?", message.x, message.y);
+  // text("ARE YOU EATING YOURSELF ?", message2.x, message2.y);
+  // pop();
 
   for (let pacman of pacmans) {
-    console.log(pacman.velocity);
-
     pacman.x += pacman.velocity;
     drawPacman(pacman);
+  }
+
+  for (let pain of pains) {
+    pain.x += pain.velocity;
+    drawPain();
   }
 
   // //Move the text
@@ -153,6 +158,18 @@ function drawPacman(pacman) {
       TWO_PI - QUARTER_PI,
       PIE,
     );
+  }
+  pop();
+}
+
+function drawPain(pain) {
+  push();
+  fill("#ff00ff");
+  noStroke();
+  if (pain.direction === "left") {
+    circle(pain.x, pain.y, pain.size);
+  } else if (pain.direction === "right") {
+    circle(pain.x, pain.y, pain.size, pain.size);
   }
   pop();
 }
