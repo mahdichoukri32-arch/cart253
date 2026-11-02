@@ -109,7 +109,7 @@ function draw() {
 
   for (let pain of pains) {
     pain.x += pain.velocity;
-    drawPain();
+    drawPain(pain);
   }
 
   // //Move the text
