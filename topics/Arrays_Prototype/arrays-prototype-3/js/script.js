@@ -23,11 +23,11 @@ let state = "title";
 let Bobastyle;
 
 //Added a font to give this program a more game related look
-function preload() {
-  Bobastyle = loadFont(
-    "./assets/fonts/Redaction_35/Redaction35-Regular-Regular.otf",
-  );
-}
+// function preload() {
+//   Bobastyle = loadFont(
+//     "./assets/fonts/Redaction_35/Redaction35-Regular-Regular.otf",
+//   );
+// }
 
 /**
  * Create a canvas
@@ -117,7 +117,7 @@ function title() {
 
   push();
   fill("#90EE90");
-  textFont(Bobastyle);
+  textFont("Arial");
   textSize(32);
   textAlign(CENTER, CENTER);
 
