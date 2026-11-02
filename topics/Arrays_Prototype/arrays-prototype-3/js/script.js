@@ -8,6 +8,9 @@
 "use strict";
 
 let pearls = [];
+
+let strawX = 320;
+let strawY = 450;
 /**
  * Create a canvas
  */
@@ -17,10 +20,12 @@ function setup() {
 
 //To draw pearl tapioca that taste to good it's bad
 function createPearls() {
-  let y = random(300, 600);
+  let y = random(450, 600);
 
   let left = map(y, 280, 620, 145, 180);
   let right = map(y, 280, 620, 495, 460);
+
+  let x = random(left + 20, right - 20);
 
   //Random pearl
   let pearl = {
@@ -59,6 +64,10 @@ function draw() {
 
   //Straw
   moveStraw();
+
+  //Pop pearls
+
+  popPearls();
   drawStraw();
 
   //Cup
@@ -90,12 +99,34 @@ function drawPearl(pearl) {
 }
 
 function moveStraw() {
-  let strawY = constrain(mouseY, 350, 600);
+  // Move left
+  if (keyIsDown(LEFT_ARROW)) {
+    strawX -= 3;
+  }
 
+  // Move right
+  if (keyIsDown(RIGHT_ARROW)) {
+    strawX += 3;
+  }
+
+  // Move up
+  if (keyIsDown(UP_ARROW)) {
+    strawY -= 3;
+  }
+
+  // Move down
+  if (keyIsDown(DOWN_ARROW)) {
+    strawY += 3;
+  }
+
+  // Vertical limits
+  strawY = constrain(strawY, 350, 605);
+
+  // Horizontal limits
   let left = map(strawY, 280, 620, 145, 180);
   let right = map(strawY, 280, 620, 495, 460);
 
-  let strawX = constrain(mouseX, left + 10, right - 10);
+  strawX = constrain(strawX, left + 35, right - 35);
 }
 
 function drawStraw() {
@@ -103,18 +134,19 @@ function drawStraw() {
   push();
   fill("#ff69b4");
   noStroke();
-  rect(mouseX - 10, 20, 20, mouseY - 20);
+  quad(310, 20, 330, 20, strawX + 10, strawY, strawX - 10, strawY);
   pop();
 }
 
-function mousePressed() {
+function popPearls() {
   for (let i = pearls.length - 1; i >= 0; i--) {
     let pearl = pearls[i];
 
     let distance = dist(strawX, strawY, pearl.x, pearl.y);
 
-    if (distance < pearl.size / 2) {
-      pearl.splice(i, 1);
+    if (distance < 40) {
+      pearls.splice(i, 1);
+      break;
     }
   }
 }
