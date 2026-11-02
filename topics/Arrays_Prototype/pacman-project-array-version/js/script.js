@@ -10,19 +10,17 @@
 // All pacmans
 let pacmans = [
   {
-    // x: 400,
-    x: 350,
+    x: 400,
     y: 50,
     fill: "#ffff00",
     size: 65,
-    velocity: 3,
+    velocity: -3,
     direction: "left",
   },
 
   // The pacman 2
   {
-    // x: -500.5,
-    x: 50,
+    x: -500.5,
     y: 150,
     fill: "#ffa500",
     size: 65,
@@ -32,8 +30,7 @@ let pacmans = [
 
   // The pacman 3
   {
-    // x: 1380,
-    x: 300,
+    x: 1380,
     y: 250,
     fill: "#ff0000",
     size: 65,
@@ -43,8 +40,7 @@ let pacmans = [
 
   // The pacman 4
   {
-    // x: -1000,
-    x: 100,
+    x: -1000,
     y: 250,
     fill: "#ff0000",
     size: 65,
@@ -54,20 +50,23 @@ let pacmans = [
 ];
 
 // The point
-let point = {
-  x: 370.5,
-  y: 50,
-  width: 20,
-  height: 20,
-};
+let point = [
+  {
+    x: 370.5,
+    y: 50,
+    width: 20,
+    height: 20,
+  },
 
-// The point 2
-let point2 = {
-  x: -470.5,
-  y: 150,
-  width: 20,
-  height: 20,
-};
+  // The point 2
+  {
+    x: -470.5,
+    y: 150,
+    width: 20,
+    height: 20,
+  },
+];
+
 //Text
 
 let message = {
@@ -102,6 +101,8 @@ function draw() {
   pop();
 
   for (let pacman of pacmans) {
+    console.log(pacman.velocity);
+
     pacman.x += pacman.velocity;
     drawPacman(pacman);
   }
@@ -133,9 +134,25 @@ function drawPacman(pacman) {
   noStroke();
 
   if (pacman.direction === "left") {
-    arc(pacman.x, pacman.y, pacman.size, PI + QUARTER_PI, PI - QUARTER_PI, PIE);
+    arc(
+      pacman.x,
+      pacman.y,
+      pacman.size,
+      pacman.size,
+      PI + QUARTER_PI,
+      PI - QUARTER_PI,
+      PIE,
+    );
   } else if (pacman.direction === "right") {
-    arc(pacman.x, pacman.y, pacman.size, QUARTER_PI, TWO_PI - QUARTER_PI, PIE);
+    arc(
+      pacman.x,
+      pacman.y,
+      pacman.size,
+      pacman.size,
+      QUARTER_PI,
+      TWO_PI - QUARTER_PI,
+      PIE,
+    );
   }
   pop();
 }
