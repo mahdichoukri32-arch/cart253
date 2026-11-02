@@ -29,9 +29,7 @@ let Bobastyle;
 
 //Added a font to give this program a more game related look
 function preload() {
-  Bobastyle = loadFont(
-    "./assets/fonts/Redaction_35/Redaction35-Regular-Regular.otf",
-  );
+  Bobastyle = loadFont("./assets/fonts/Redaction_35/Redaction35-Regular.ttf");
 }
 
 /**
