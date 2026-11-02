@@ -15,19 +15,24 @@ let strawX = 320;
 let strawY = 450;
 
 //Display a title
-let titleString =
-  "BUBLE TEA\n\nUse the arrow keys to pop the tapioca pearls!\n\nPress ENTER to start";
+let titleString = "BUBBLE TEA";
+
+let instructionString =
+  "Use the arrow keys to move the straw\nand pop the tapioca pearls!";
+
+let startString = "Press ENTER to start";
+
 let state = "title";
 
 //The font style
 let Bobastyle;
 
 //Added a font to give this program a more game related look
-// function preload() {
-//   Bobastyle = loadFont(
-//     "./assets/fonts/Redaction_35/Redaction35-Regular-Regular.otf",
-//   );
-// }
+function preload() {
+  Bobastyle = loadFont(
+    "./assets/fonts/Redaction_35/Redaction35-Regular-Regular.otf",
+  );
+}
 
 /**
  * Create a canvas
@@ -118,11 +123,21 @@ function title() {
   push();
   fill("#201002");
   noStroke();
-  textFont("Arial");
-  textSize(32);
+  textFont();
+  textSize(26);
   textAlign(CENTER, CENTER);
 
-  text(titleString, width / 2, height / 2, 500);
+  //Main title
+  textSize(48);
+  text(titleString, 320, 170);
+
+  //Instruction
+  textSize(22);
+  text(instructionString, 320, 320);
+
+  // Start instruction
+  textSize(24);
+  text(startString, 320, 470);
   pop();
 }
 
