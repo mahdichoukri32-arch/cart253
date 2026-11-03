@@ -103,6 +103,7 @@ let pains = [
  */
 function setup() {
   createCanvas(400, 300);
+  noLoop();
 }
 
 /**
@@ -194,15 +195,21 @@ function draw() {
   }
 
   //Final scene: Camera
-  else if (scene === 4) {
+  if (fusion >= 1) {
+    fill(255);
+    textAlign(CENTER);
+    textSize(16);
+    text("CLICK TO ACTIVATE THE CAMERA", width / 2, 150);
+  } else if (scene === 4) {
     if (cameraStarted) {
       image(camera, 0, 0, 400, 300);
     }
 
     fill("#ff0000");
-    textAlign(CENTER);
+    textAlign(CENTER, CENTER);
     textSize(20);
-    text("ARE YOU EATING YOURSELF ?", width / 2, 40);
+    text("ARE YOU EATING YOURSELF ?", width / 2, height / 2);
+    pop();
   }
 }
 
@@ -256,9 +263,12 @@ function drawPain(pain) {
 function mousePressed() {
   userStartAudio();
 
+  if (scene === 0) {
+    loop();
+  }
+
   if (scene === 3 && fusion >= 1 && !cameraStarted) {
     openCamera();
-
     scene = 4;
   }
 }
@@ -269,11 +279,4 @@ function openCamera() {
   camera.hide();
 
   cameraStarted = true;
-}
-
-if (fusion >= 1) {
-  fill(255);
-  textAlign(CENTER);
-  textSize(16);
-  text("CLICK TO ACTIVATE THE CAMERA", width / 2, 150);
 }
