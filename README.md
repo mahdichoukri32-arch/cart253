@@ -95,3 +95,17 @@ Don't forget to touch the canvas to start the sound for the offline version.
 [Alien Translator](https://mahdichoukri32-arch.github.io/cart253/topics/Function_Prototype/Alien_Translator)
 [View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Function_Prototype/Alien_Translator)
 ![Alien Translator](./topics/Function_Prototype/Image/Alien_Translator.png)
+
+## Arrays : Prototype
+
+[Pacman_Version_Two](https://mahdichoukri32-arch.github.io/cart253/topics/Arrays_Prototype/pacman_version_2)
+[View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Arrays_Prototype/pacman_version_2)
+![Pacman_Version_Two](./topics/Arrays_Prototype/Image/Pacman.png)
+
+[Soap](https://mahdichoukri32-arch.github.io/cart253/topics/Arrays_Prototype/Soap)
+[View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Arrays_Prototype/Soap)
+![Soap](./topics/Arrays_Prototype/Image/Soap.png)
+
+[Boba](https://mahdichoukri32-arch.github.io/cart253/topics/Arrays_Prototype/Boba)
+[View code](https://github.com/mahdichoukri32-arch/cart253/tree/main/topics/Arrays_Prototype/Boba)
+![Bubble_Tea](./topics/Arrays_Prototype/Image/Boba.png)
