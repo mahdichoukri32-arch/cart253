@@ -178,45 +178,26 @@ function draw() {
 
   // Final scene: One circle
   else if (scene === 3) {
-    fusion += 0.02;
+    fusion += 0.015;
     fusion = constrain(fusion, 0, 1);
 
+    // Smooth movement
+    let smoothFusion = fusion * fusion * (3 - 2 * fusion);
+
     // Both Pacmans move toward the same point
-    pacmans[2].x = map(fusion, 0, 1, fusionStart3, 200);
-    pacmans[3].x = map(fusion, 0, 1, fusionStart4, 200);
+    pacmans[2].x = map(smoothFusion, 0, 1, fusionStart3, 200);
+    pacmans[3].x = map(smoothFusion, 0, 1, fusionStart4, 200);
 
-    if (fusion < 1) {
-      drawPacman(pacmans[2]);
-      drawPacman(pacmans[3]);
-    } else {
-      fill("#ff0000");
-      noStroke();
-      circle(200, 250, 65);
-    }
+    // Mouths gradually close
+    let mouth = map(smoothFusion, 0, 1, QUARTER_PI, 0);
+
+    drawPacman(pacmans[2], mouth);
+    drawPacman(pacmans[3], mouth);
   }
-
-  // //Move the text
-  // message.x = message.x - 3.05;
-  // //Move the text
-  // message2.x = message2.x + 2.80;
-  // //Move the pacman
-  //   pacman.x = pacman.x - pacman.velocity.x;
-  // //Move the point
-  //   point.x = point.x - 3;
-  // //Move the pacman 2
-  // pacman2.x = pacman2.x + pacman2.velocity.x;
-  // //Move the point 2
-  //   point2.x = point2.x + 3;
-  // //Move the pacman 3
-  // pacman3.x = pacman3.x - pacman3.velocity.x;
-  // //Move the pacman 4
-  // pacman4.x = pacman4.x + pacman4.velocity.x;
-  // //Stop the two last pacman
-  // pacman3.x = constrain(pacman3.x, 200, 1500);
-  // pacman4.x = constrain(pacman4.x, -1500, 200);
 }
 
-function drawPacman(pacman) {
+//The Pacman is a representation of you during stressful event
+function drawPacman(pacman, mouth = QUARTER_PI) {
   push();
   fill(pacman.fill);
   noStroke();
@@ -227,8 +208,8 @@ function drawPacman(pacman) {
       pacman.y,
       pacman.size,
       pacman.size,
-      PI + QUARTER_PI,
-      PI - QUARTER_PI,
+      PI + mouth,
+      PI - mouth,
       PIE,
     );
   } else if (pacman.direction === "right") {
@@ -237,11 +218,12 @@ function drawPacman(pacman) {
       pacman.y,
       pacman.size,
       pacman.size,
-      QUARTER_PI,
-      TWO_PI - QUARTER_PI,
+      mouth,
+      TWO_PI - mouth,
       PIE,
     );
   }
+
   pop();
 }
 
