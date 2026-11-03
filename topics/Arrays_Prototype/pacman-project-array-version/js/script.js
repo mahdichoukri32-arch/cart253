@@ -19,22 +19,6 @@ let fusion = 0;
 let fusionStart3;
 let fusionStart4;
 
-//Sound when the two circle made into a fusion
-let fusionSound;
-
-//Where the sound its supposes to start
-function preload() {
-  fusionSound = loadSound(
-    "./assets/sounds/Fusion.mp3",
-    function () {
-      console.log("Sound loaded sucessfully");
-    },
-    function (error) {
-      console.log("Sound loading error:", error);
-    },
-  );
-}
-
 //Camera open
 let camera;
 let cameraStarted = false;
@@ -177,11 +161,6 @@ function draw() {
       fusionStart3 = pacmans[2].x;
       fusionStart4 = pacmans[3].x;
 
-      //Sound started right now
-      if (fusionSound && fusionSound.isLoaded()) {
-        fusionSound.play();
-      }
-
       scene = 3;
     }
   }
@@ -206,7 +185,7 @@ function draw() {
   }
 
   //Final scene: Camera
-  if (fusion === 3 && fusion >= 1) {
+  if (scene === 3 && fusion >= 1) {
     fill(255);
     textAlign(CENTER, CENTER);
     textSize(16);
@@ -216,6 +195,7 @@ function draw() {
       image(camera, 0, 0, 400, 300);
     }
 
+    push();
     fill("#ff0000");
     textAlign(CENTER, CENTER);
     textSize(20);
@@ -272,8 +252,6 @@ function drawPain(pain) {
 
 //To made the audio work
 function mousePressed() {
-  userStartAudio();
-
   if (scene === 0) {
     loop();
   }
