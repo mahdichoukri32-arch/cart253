@@ -14,7 +14,7 @@ let pearls = [];
 let strawX = 320;
 let strawY = 450;
 
-//Display a title
+//Display a title and instructions so the player understand the game
 let titleString = "BUBBLE TEA";
 
 let instructionString =
@@ -23,6 +23,10 @@ let instructionString =
 let startString = "Press ENTER to start";
 
 let state = "title";
+
+// The music started when you press enter, it's like a background music
+
+let Bobasound;
 
 //The font style
 let Bobastyle;
@@ -35,8 +39,9 @@ function preload() {
 /**
  * Create a canvas
  */
-function setup() {
+async function setup() {
   createCanvas(640, 640);
+  Bobasound = await loadSound("./assets/sounds/Autumn Day.mp3");
 }
 
 //To draw pearl tapioca that taste to good it's bad
@@ -139,9 +144,11 @@ function title() {
   pop();
 }
 
+// The game start after pressing enter which automatically trigger the music to play
 function keyPressed() {
   if (state === "title" && keyCode === ENTER) {
     state = "playing";
+    Bobasound.play();
   }
 }
 //Bubble Tapioca
