@@ -240,3 +240,17 @@ function drawPain(pain) {
 function mousePressed() {
   userStartAudio();
 }
+
+function openCamera() {
+  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices
+      .getUserMedia({ video: true })
+      .then(function (stream) {
+        var video = document.getElementById("video");
+        video.play();
+      })
+      .catch(function (error) {
+        console.log("Unable to open camera: " + error);
+      });
+  }
+}
