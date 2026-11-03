@@ -76,7 +76,7 @@ let pains = [
     direction: "left",
   },
 
-  // The point 2
+  // The second version of it
   {
     x: -470.5,
     y: 150,
@@ -86,18 +86,6 @@ let pains = [
     direction: "right",
   },
 ];
-
-// //Text
-
-// let message = {
-//   x: 450,
-//   y: 50,
-// };
-
-// let message2 = {
-//   x: -680,
-//   y: 150,
-// };
 
 /**
  * Create a canvas
@@ -112,15 +100,7 @@ function setup() {
 function draw() {
   background(0);
 
-  // // Write a text that follow it
-  // push();
-  // fill(255, 0, 255);
-  // strokeWeight(2);
-  // text("ARE YOU EATING YOURSELF ?", message.x, message.y);
-  // text("ARE YOU EATING YOURSELF ?", message2.x, message2.y);
-  // pop();
-
-  //Scene 1: Yellow Pacman
+  //Scene 1: Yellow Pacman -> procastrinate about the task you have to do
   if (scene === 0) {
     let pacman = pacmans[0];
     let pain = pains[0];
@@ -137,7 +117,7 @@ function draw() {
     }
   }
 
-  //Scene 2: Orange Pacman
+  //Scene 2: Orange Pacman -> hurry up about finsh the task in time
   else if (scene === 1) {
     let pacman = pacmans[1];
     let pain = pains[1];
@@ -155,7 +135,8 @@ function draw() {
     }
   }
 
-  //Scene 3: Two red Pacmans
+  // Scene 3: Two red Pacmans -> Facing the consequence. You don't longer have the time that you used to have it.
+  // Your're going on a rythm that doesn't align with your capacity, the faster circle is you mental state and the second one is your body.
   else if (scene === 2) {
     for (let i = 2; i < pacmans.length; i++) {
       let pacman = pacmans[i];
@@ -166,6 +147,7 @@ function draw() {
       drawPacman(pacman);
     }
 
+    // To stop the two circle before making the full fusion
     let distance = dist(pacmans[2].x, pacmans[2].y, pacmans[3].x, pacmans[3].y);
 
     if (distance < 65) {
@@ -202,6 +184,7 @@ function drawPacman(pacman, mouth = QUARTER_PI) {
   fill(pacman.fill);
   noStroke();
 
+  //Draw pacman 1/3
   if (pacman.direction === "left") {
     arc(
       pacman.x,
@@ -212,6 +195,8 @@ function drawPacman(pacman, mouth = QUARTER_PI) {
       PI - mouth,
       PIE,
     );
+
+    //Draw pacman 2/4
   } else if (pacman.direction === "right") {
     arc(
       pacman.x,
@@ -223,10 +208,10 @@ function drawPacman(pacman, mouth = QUARTER_PI) {
       PIE,
     );
   }
-
   pop();
 }
 
+//Draw the task that sowly become pain for you to do it
 function drawPain(pain) {
   push();
   fill("#ff00ff");
