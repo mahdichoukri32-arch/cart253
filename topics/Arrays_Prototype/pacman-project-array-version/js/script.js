@@ -26,6 +26,10 @@ function preload() {
   fusionSound = loadSound("./assets/sounds/fusion.mp3");
 }
 
+//Camera open
+let camera;
+let cameraStarted = false;
+
 // All pacmans
 let pacmans = [
   {
@@ -188,6 +192,18 @@ function draw() {
     drawPacman(pacmans[2], mouth);
     drawPacman(pacmans[3], mouth);
   }
+
+  //Final scene: Camera
+  else if (scene === 4) {
+    if (cameraStarted) {
+      image(camera, 0, 0, 400, 300);
+    }
+
+    fill("#ff0000");
+    textAlign(CENTER);
+    textSize(20);
+    text("ARE YOU EATING YOURSELF ?", width / 2, 40);
+  }
 }
 
 //The Pacman is a representation of you during stressful event
@@ -239,18 +255,25 @@ function drawPain(pain) {
 //To made the audio work
 function mousePressed() {
   userStartAudio();
+
+  if (scene === 3 && fusion >= 1 && !cameraStarted) {
+    openCamera();
+
+    scene = 4;
+  }
 }
 
 function openCamera() {
-  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices
-      .getUserMedia({ video: true })
-      .then(function (stream) {
-        var video = document.getElementById("video");
-        video.play();
-      })
-      .catch(function (error) {
-        console.log("Unable to open camera: " + error);
-      });
-  }
+  camera = createCapture(VIDEO);
+  camera.size(400, 400);
+  camera.hide();
+
+  cameraStarted = true;
+}
+
+if (fusion >= 1) {
+  fill(255);
+  textAlign(CENTER);
+  textSize(16);
+  text("CLICK TO ACTIVATE THE CAMERA", width / 2, 150);
 }
