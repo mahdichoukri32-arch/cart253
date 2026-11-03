@@ -25,7 +25,7 @@ let fusionSound;
 //Where the sound its supposes to start
 function preload() {
   fusionSound = loadSound(
-    "./assets/sounds/fusion.mp3",
+    "./assets/sounds/Fusion.mp3",
     function () {
       console.log("Sound loaded sucessfully");
     },
