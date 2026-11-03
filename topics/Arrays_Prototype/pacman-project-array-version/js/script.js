@@ -19,6 +19,13 @@ let fusion = 0;
 let fusionStart3;
 let fusionStart4;
 
+//Sound when the two circle made into a fusion
+let fusionSound;
+
+function preload() {
+  fusionSound = loadSound("./assets/sounds/fusion.mp3");
+}
+
 // All pacmans
 let pacmans = [
   {
@@ -154,6 +161,11 @@ function draw() {
       fusionStart3 = pacmans[2].x;
       fusionStart4 = pacmans[3].x;
 
+      //Sound started right now
+      if (fusionSound && fusionSound.isLoaded()) {
+        fusionSound.play();
+      }
+
       scene = 3;
     }
   }
@@ -222,4 +234,9 @@ function drawPain(pain) {
     circle(pain.x, pain.y, pain.size, pain.size);
   }
   pop();
+}
+
+//To made the audio work
+function mousePressed() {
+  userStartAudio();
 }
