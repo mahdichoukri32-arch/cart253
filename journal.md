@@ -86,3 +86,17 @@ Through these three projects, I hope users can rediscover some of the elements t
 
 In the future, I would like to explore functions with parameters more deeply, not only to simplify my coding process but also to make more complex and interactive ideas easier to develop.
 ![A screenshot](./topics/Function_Prototype/Image/Example.png)
+
+# 2026/11/3
+
+This week, I learned how to use arrays, which allow us to create and manage multiple objects without having to write separate code for each one.
+
+For example, in my prototype Are You Eating Yourself?, I created four Pac-Man characters moving in different directions. They represent a person who initially procrastinates, then rushes to finish their work, eventually losing themselves under pressure. Thanks to what I learned about arrays, I was able to control the direction, speed, and movement of each Pac-Man more easily. I made the first Pac-Man move slowly before disappearing, allowing the second one to appear at a faster speed. At the end of the animation, two Pac-Man characters move toward each other and gradually merge into one circle. I was able to create a smoother transition by using the distance between the characters rather than relying only on constrain(), which limits values within a specific range.
+
+For my Bubble Tea prototype, I was surprised by how difficult it was to make the straw function properly. The straw needed to move while popping the tapioca pearls. Creating the popping interaction was challenging because it had to occur only when the straw was close enough to a pearl, without popping an entire row at once. The pearls were also randomly generated and restricted to the cup, creating the impression that they were accumulating inside it. However, the most difficult part was animating the straw realistically. I wanted it to bend as it moved, so I had to research how to recreate this movement using the arrow keys to change its direction. This added another challenge to the game, requiring players to use both dexterity and observation to control the straw and pop the pearls.
+
+Lastly, in my Soap prototype, arrays helped me create more fluid bubble movements. I generated bubbles randomly and used the loop for (let bubble of bubbles) to control their movement. This allowed me to animate multiple bubbles without having to write individual instructions for each one, while still giving them different movements.
+
+I would love to explore loops further because they become especially useful when combined with arrays to create and manage multiple objects. In the future, I want people interacting with my prototypes to experience something similar to a sandbox game, where they have the freedom to experiment and create, with their imagination being the only limit.
+
+![A screenshot](./topics/Arrays_Prototype/Image/Buble_Tea.png)
