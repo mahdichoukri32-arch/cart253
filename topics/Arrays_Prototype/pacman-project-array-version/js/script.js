@@ -22,8 +22,17 @@ let fusionStart4;
 //Sound when the two circle made into a fusion
 let fusionSound;
 
+//Where the sound its supposes to start
 function preload() {
-  fusionSound = loadSound("./assets/sounds/fusion.mp3");
+  fusionSound = loadSound(
+    "./assets/sounds/fusion.mp3",
+    function () {
+      console.log("Sound loaded sucessfully");
+    },
+    function (error) {
+      console.log("Sound loading error:", error);
+    },
+  );
 }
 
 //Camera open
@@ -31,6 +40,8 @@ let camera;
 let cameraStarted = false;
 
 // All pacmans
+
+//The pacman 1
 let pacmans = [
   {
     x: 400,
@@ -195,9 +206,9 @@ function draw() {
   }
 
   //Final scene: Camera
-  if (fusion >= 1) {
+  if (fusion === 3 && fusion >= 1) {
     fill(255);
-    textAlign(CENTER);
+    textAlign(CENTER, CENTER);
     textSize(16);
     text("CLICK TO ACTIVATE THE CAMERA", width / 2, 150);
   } else if (scene === 4) {
@@ -273,6 +284,7 @@ function mousePressed() {
   }
 }
 
+//The camera
 function openCamera() {
   camera = createCapture(VIDEO);
   camera.size(400, 400);
