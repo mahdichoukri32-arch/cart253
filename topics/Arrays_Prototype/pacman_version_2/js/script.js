@@ -165,7 +165,7 @@ function draw() {
     }
   }
 
-  // Final scene: One circle
+  // Final scene: One circle -> you ended up eating yourself no matters if you succeded or not on your task, you are tired up and unhappy.
   else if (scene === 3) {
     fusion += 0.015;
     fusion = constrain(fusion, 0, 1);
