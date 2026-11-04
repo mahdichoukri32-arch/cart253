@@ -41,13 +41,6 @@ function createBubble() {
 function draw() {
   background("#B0E0E6");
 
-  //Water
-  push();
-  fill("#4682B4");
-  noStroke();
-  rect(0, 400, 500, 880);
-  pop();
-
   //Bathhub
   push();
   fill("#e6fcff");
@@ -85,6 +78,7 @@ function draw() {
   rect(85, 60, 480, 280);
   pop();
 
+  // Make the bubbles appear and move up
   for (let bubble of bubbles) {
     drawBuble(bubble);
     drawReflecction(bubble);
@@ -111,7 +105,7 @@ function drawBuble(bubble) {
   pop();
 }
 
-//User interact with the soap
+//User interact with the soap, will heard a sound of bubble bursting
 function mousePressed() {
   userStartAudio();
   if (mouseX >= 280 && mouseX <= 380 && mouseY >= 465 && mouseY <= 545) {
@@ -122,6 +116,7 @@ function mousePressed() {
   }
 }
 
+//Bubble will go up and have an reflection on the mirror to make it visible and also add at the realism of an bubble
 function drawReflecction(bubble) {
   let reflectionX = 650 - bubble.x;
   let reflectionY = bubble.y;
