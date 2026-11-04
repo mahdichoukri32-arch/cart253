@@ -202,6 +202,8 @@ function drawStraw() {
   pop();
 }
 
+// How the game mechanic is suppose to work is by moving the straw. Then when the straw is close to a pearl, it should pop in contact of it.
+
 function popPearls() {
   for (let i = pearls.length - 1; i >= 0; i--) {
     let pearl = pearls[i];
