@@ -11,19 +11,41 @@
 
 let tarot = undefined;
 
+//
+
 /**
  * Load tarot data
  */
-function preload() {
-  tarot = loadJSON("assets/data/tarot_interpretations.json");
+async function preload() {
+  tarot = await loadJSON("assets/data/tarot_interpretations.json");
 }
 
 /**
- * tbd.
+ * Create a canvas
  */
-function setup() {}
+async function setup() {
+  createCanvas(800, 400);
+  await preload();
+}
 
 /**
- * tbd.
+ * Display tarot
  */
-function draw() {}
+function draw() {
+  background(0);
+
+  //   const card = tarot.tarot_interpretations[0];
+  //   const meanings = card.meanings;
+  //   const shadows = meanings.shadow;
+  //   const fool = shadows[0];
+
+  const fool = tarot.tarot_interpretations[0].meanings.shadow[0];
+
+  //Display the information
+  push();
+  textSize(16);
+  fill("yellow");
+  textAlign(CENTER, CENTER);
+  text(fool, width / 2, height / 2);
+  pop();
+}
