@@ -33,8 +33,10 @@ const machines = [
   },
   {
     type: "crusher",
-    x: 0,
+    x: 300,
     y: 100,
+    width: 100,
+    height: 100,
     fill: "#777777",
     draggable: true,
     functionality: 45,
