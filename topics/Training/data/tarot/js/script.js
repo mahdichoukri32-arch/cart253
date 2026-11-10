@@ -11,7 +11,8 @@
 
 let tarot = undefined;
 
-//
+// Our fortune
+let fortune = "Click to show a fortune.";
 
 /**
  * Load tarot data
@@ -34,18 +35,18 @@ async function setup() {
 function draw() {
   background(0);
 
-  //   const card = tarot.tarot_interpretations[0];
-  //   const meanings = card.meanings;
-  //   const shadows = meanings.shadow;
-  //   const fool = shadows[0];
-
-  const fool = tarot.tarot_interpretations[0].meanings.shadow[0];
-
   //Display the information
   push();
   textSize(16);
   fill("yellow");
   textAlign(CENTER, CENTER);
-  text(fool, width / 2, height / 2);
+  text(fortune, width / 2, height / 2);
   pop();
+}
+
+function mousePressed() {
+  // Choose a random cards
+  const card = random(tarot.tarot_interpretations);
+  // Choose a random fortune
+  fortune = random(card.fortune_telling);
 }
