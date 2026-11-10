@@ -1,23 +1,29 @@
 /**
  * Tarot
  * Pippin Barr
- * 
+ *
  * Some experiments with data representing a Tarot deck
  */
 
 "use strict";
 
-/**
- * tbd.
-*/
-function setup() {
+// Our tarot data
 
-}
-
+let tarot = undefined;
 
 /**
- * tbd.
-*/
-function draw() {
-
+ * Load tarot data
+ */
+function preload() {
+  tarot = loadJSON("assets/data/tarot_interpretations.json");
 }
+
+/**
+ * tbd.
+ */
+function setup() {}
+
+/**
+ * tbd.
+ */
+function draw() {}
