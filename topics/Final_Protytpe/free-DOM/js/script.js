@@ -13,6 +13,7 @@ let creature = {
   x: 65,
   y: 450,
   size: 100,
+  canMove: true,
 };
 
 /** Your harness */
@@ -57,7 +58,7 @@ function draw() {
   rope.y = mouseY;
 
   moveCreature();
-  checkOverlap();
+  checkCollision();
 
   drawObstacle();
   drawRope();
@@ -82,8 +83,10 @@ function drawRope() {
 }
 
 function moveCreature() {
-  creature.x = lerp(creature.x, rope.x, 0.1);
-  creature.y = lerp(creature.y, rope.y, 0.1);
+  if (creature.canMove === true) {
+    creature.x = lerp(creature.x, rope.x, 0.1);
+    creature.y = lerp(creature.y, rope.y, 0.1);
+  }
 }
 
 function drawObstacle() {
@@ -98,6 +101,30 @@ function drawObstacle() {
   noStroke();
   rect(obstacle2.x, obstacle2.y, obstacle2.width, obstacle2.height);
   pop();
+
+  if (checkCollision() === true) {
+    creature.canMove = false;
+  } else if (checkCollision() === false) {
+    creature.canMove = true;
+  }
 }
 
-function checkOverlap() {}
+function checkCollision() {
+  if (
+    creature.x > obstacle1.x &&
+    creature.x < obstacle1.x + obstacle1.width &&
+    creature.y > obstacle1.y &&
+    creature.y < obstacle1.y + obstacle1.height
+  ) {
+    return true;
+  }
+
+  if (
+    creature.x > obstacle2.x &&
+    creature.x < obstacle2.x + obstacle2.width &&
+    creature.y > obstacle2.y &&
+    creature.y < obstacle2.y + obstacle2.height
+  ) {
+    return true;
+  }
+}
