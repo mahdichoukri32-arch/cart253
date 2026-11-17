@@ -100,3 +100,5 @@ Lastly, in my Soap prototype, arrays helped me create more fluid bubble movement
 I would love to explore loops further because they become especially useful when combined with arrays to create and manage multiple objects. In the future, I want people interacting with my prototypes to experience something similar to a sandbox game, where they have the freedom to experiment and create, with their imagination being the only limit.
 
 ![A screenshot](./topics/Arrays_Prototype/Image/Buble_Tea.png)
+
+# 2026/11/17
