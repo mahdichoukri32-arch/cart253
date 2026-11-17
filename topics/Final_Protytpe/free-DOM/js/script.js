@@ -7,6 +7,13 @@
 
 "use strict";
 
+/** Text to display for the title and ending */
+let titleString = "free-Dom Demo";
+let endingString = "you lose";
+
+//We start by the title
+let state = "title";
+
 /** Your steed */
 
 let creature = {
@@ -31,6 +38,7 @@ let obstacle1 = {
   y: 300,
   width: 50,
   height: 200,
+  velocity: 1,
 };
 
 let obstacle2 = {
@@ -39,6 +47,7 @@ let obstacle2 = {
   y: 200,
   width: 100,
   height: 50,
+  velocity: 1,
 };
 
 /**
@@ -46,18 +55,47 @@ let obstacle2 = {
  */
 function setup() {
   createCanvas(900, 500);
+
+  //Text settings
+  textSize(32);
+  textAlign(CENTER, CENTER);
+}
+
+function draw() {
+  //Check the state and call the appropriate function
+  if (state === "title") {
+    titlePresentation();
+  } else if (state === "gameplay") {
+    gameplay();
+  } else if (state === "ending") {
+    ending();
+  }
+}
+function titlePresentation() {
+  background("#D8BFD8");
+
+  push();
+  fill("#ffff");
+  text(titleString, width / 2, height / 2);
+  pop();
+
+  //   if (moveObstacle) {
+  //     state = "gameplay";
+  //     moveCreature();
+  //   }
 }
 
 /**
  * We will start drawing a circle (our creature) who is guide by us with our mouse (string). The creature will face obstacles.
  */
-function draw() {
+function gameplay() {
   background("#DDA0DD");
 
   rope.x = mouseX;
   rope.y = mouseY;
 
   moveCreature();
+  moveObstacle();
   checkCollision();
 
   drawObstacle();
@@ -65,7 +103,41 @@ function draw() {
   drawCreature();
 }
 
+// The creature move along the rope
+
+function moveCreature() {
+  if (creature.canMove === true) {
+    creature.x = lerp(creature.x, rope.x, 0.1);
+    creature.y = lerp(creature.y, rope.y, 0.1);
+  }
+}
+
+// The obstacle are moving back and fourth as soon as they touch the screen
+
+function moveObstacle() {
+  if (creature.canMove === true) {
+    obstacle1.x += obstacle1.velocity;
+
+    obstacle2.x += obstacle2.velocity;
+
+    if (obstacle1.x === 0) {
+      obstacle1.velocity = 1;
+    } else if (obstacle1.x > 900) {
+      obstacle1.velocity = -1;
+    }
+
+    if (obstacle2.x === 0) {
+      obstacle2.velocity = 1;
+    } else if (obstacle2.x > 900) {
+      obstacle2.velocity = -1;
+    }
+  }
+}
+
 /** Our creature get guide by you */
+
+// The creature
+
 function drawCreature() {
   push();
   fill("#fae4ff");
@@ -73,6 +145,8 @@ function drawCreature() {
   circle(creature.x, creature.y, creature.size);
   pop();
 }
+
+//The rope that guide the creature
 
 function drawRope() {
   push();
@@ -82,12 +156,7 @@ function drawRope() {
   pop();
 }
 
-function moveCreature() {
-  if (creature.canMove === true) {
-    creature.x = lerp(creature.x, rope.x, 0.1);
-    creature.y = lerp(creature.y, rope.y, 0.1);
-  }
-}
+//The Obstacle that you have to avoid
 
 function drawObstacle() {
   push();
@@ -103,11 +172,11 @@ function drawObstacle() {
   pop();
 
   if (checkCollision() === true) {
-    creature.canMove = false;
-  } else if (checkCollision() === false) {
-    creature.canMove = true;
+    state = "ending";
   }
 }
+
+// How to detect a collision
 
 function checkCollision() {
   if (
@@ -126,5 +195,21 @@ function checkCollision() {
     creature.y < obstacle2.y + obstacle2.height
   ) {
     return true;
+  }
+}
+
+function ending() {
+  background("#800080");
+  push();
+  fill("#ffff");
+  text(endingString, width / 2, height / 2);
+  pop();
+}
+
+function keyPressed() {
+  if (state === "title") {
+    state = "gameplay";
+  } else if (state === "ending") {
+    state = "title";
   }
 }
