@@ -206,7 +206,7 @@ function ending() {
   pop();
 }
 
-function keyPressed() {
+function mousePressed() {
   if (state === "title") {
     state = "gameplay";
   } else if (state === "ending") {
