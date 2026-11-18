@@ -117,5 +117,5 @@ Another aspect I want to explore is the visual design of the creature. I am cons
 
 For the next stage, I want to improve the creature's appearance and continue developing the movement system. I will also need to think about how the obstacles can gradually disappear without the player immediately noticing. This is important because I want the player to slowly realize that the creature no longer needs their protection. Through this first week, I learned that even a simple interaction, such as connecting a circle to a line, can become challenging when trying to communicate a specific idea through programming. It also helped me understand how technical decisions can influence the player's experience and the meaning of the game.
 
-![Japanese Emperor Caterpillar](./topics/Final_Protytpe/free-DOM/assets/images/)
+![Japanese Emperor Caterpillar](./topics/Final_Protytpe/free-DOM/assets/images/caterpillar.jpg)
 ![free-Dom demo screenshot](./topics/Final_Protytpe/free-DOM/assets/images/free-Dom-demo.png)
