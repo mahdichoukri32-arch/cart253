@@ -102,3 +102,20 @@ I would love to explore loops further because they become especially useful when
 ![A screenshot](./topics/Arrays_Prototype/Image/Buble_Tea.png)
 
 # 2026/11/17
+
+This week, I started developing my final prototype, _free-Dom_, inspired by the well-known dinosaur game created by Google, _Chrome Dino_. In my game, the player controls a creature using the mouse, which is connected to the creature by a rope. Along the way, the player must guide it through obstacles. However, the further the player progresses, the harder it becomes to control the creature, as it gradually develops its own independence. The main obstacle is no longer the environment, but the relationship between the player and the creature. This raises an important question: will you let the creature be free, or will you force it to obey you?
+
+For my first attempt, I tried to create a simpler version of the first level. The creature is currently represented by a circle that the player can move using the mouse. Its movement is connected to a line that follows the cursor, representing the rope. I also created two rectangular obstacles placed in different positions. They move back and forth across the canvas, and the player must guide the creature to avoid colliding with them. If the creature touches one of the obstacles, the game ends.
+
+My main difficulty was translating the ideas I had imagined into an actual interactive game. At first, I wanted to create a line that followed the cursor to help the player understand the connection between their movements and the creature. However, I struggled to make the rope and the creature move together naturally. I wanted the creature to look as if it was being dragged by the player rather than simply following the mouse directly.
+
+To solve this problem, I experimented with the **lerp()** function, which allowed me to connect the creature's movement to the rope while controlling how smoothly it moved. I chose a value of **0.1**, as it created a movement that was neither too fast nor too slow. This helped me communicate the idea of guidance and made the interaction feel more natural. I was happy to finally find a solution because it allowed me to transform an important part of my concept into something functional.
+
+However, I still have some technical problems to solve. Currently, when the creature collides with an obstacle, the game ends and an ending message appears. When the player tries to restart, the creature returns to the same position where the collision happened, causing the game to end again immediately. I will need to figure out how to reset the creature's coordinates to its starting position and make sure the game can restart properly.
+
+Another aspect I want to explore is the visual design of the creature. I am considering using a caterpillar instead of a simple circle. My inspiration comes from the Japanese emperor caterpillar, which I find visually remarkable and memorable. Its antennae resemble plants growing from its head, which I think could connect symbolically to my game's theme of growth and independence. I also like how expressive its face looks without requiring too many details, which could make it easier to adapt into a simple animated character.
+
+For the next stage, I want to improve the creature's appearance and continue developing the movement system. I will also need to think about how the obstacles can gradually disappear without the player immediately noticing. This is important because I want the player to slowly realize that the creature no longer needs their protection. Through this first week, I learned that even a simple interaction, such as connecting a circle to a line, can become challenging when trying to communicate a specific idea through programming. It also helped me understand how technical decisions can influence the player's experience and the meaning of the game.
+
+![Japanese Emperor Caterpillar](./topics/Final_Protytpe/free-DOM/assets/images/)
+![free-Dom demo screenshot](./topics/Final_Protytpe/free-DOM/assets/images/free-Dom-demo.png)
