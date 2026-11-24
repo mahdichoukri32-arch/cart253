@@ -14,6 +14,7 @@ let score = 0;
 /** Text to display for the title and ending */
 let titleString = "free-Dom Demo";
 let endingString = "you lose";
+let winString = "You Win!";
 
 //We start by the title
 let state = "title";
@@ -33,6 +34,7 @@ let creature = {
   y: 450,
   size: 80,
   canMove: true,
+  lerp: 0.1,
 
   //Tails
   x: 60,
@@ -78,15 +80,15 @@ function createObstacle() {
     color: "#9932CC",
     x: random(300, width),
     y: random(0, height - 200),
-    width: 50,
-    height: 200,
-    velocity: -1,
+    width: random(100, 200),
+    height: random(100, 300),
+    velocity: -4,
   };
-  if (random() < 0.5) {
-    obstacle.width = 200;
-    obstacle.height = 50;
-    obstacle.y = random(0, height - obstacle.height);
-  }
+  // if (random() < 0.5) {
+  //   obstacle.width = 200;
+  //   obstacle.height = 50;
+  //   obstacle.y = random(0, height - obstacle.height);
+  // }
   return obstacle;
 }
 
@@ -98,8 +100,11 @@ function draw() {
     gameplay();
   } else if (state === "ending") {
     ending();
+  } else if (state === "win") {
+    win();
   }
 }
+
 function titlePresentation() {
   background("#D8BFD8");
 
@@ -152,8 +157,14 @@ function gameplay() {
 
 function moveCreature() {
   if (creature.canMove === true) {
-    creature.x = lerp(creature.x, rope.x, 0.1);
-    creature.y = lerp(creature.y, rope.y, 0.1);
+    if (random(1, 100) < 2) {
+      creature.lerp = random(0.002, 0.15);
+    }
+
+    creature.x = lerp(creature.x, rope.x, creature.lerp);
+    creature.y = lerp(creature.y, rope.y, creature.lerp);
+    creature.x += random(-1, 1);
+    creature.y += random(-1, 1);
   }
 }
 
@@ -166,6 +177,8 @@ function moveObstacle(obstacle) {
     if (obstacle.x <= -obstacle.width) {
       if (score < 15) {
         score += 1;
+      } else {
+        state = "win";
       }
 
       let rightEdge = width;
@@ -264,6 +277,24 @@ function ending() {
   pop();
 }
 
+function win() {
+  background("#ff00ff");
+  push();
+  fill("#ffff");
+  text(winString, width / 2, height / 2);
+
+  push();
+  fill(0);
+  noStroke();
+  circle(450, 350, 100);
+  pop();
+
+  push();
+  fill("#D8BFD8");
+  text("level 3", 450, 350);
+  pop();
+}
+
 function resetGame() {
   push();
   fill(255);
@@ -302,5 +333,8 @@ function mousePressed() {
     }
   } else if (state === "ending") {
     resetGame();
+  } else {
+    state = "win";
+    window.open("LEVEL_3.html");
   }
 }
