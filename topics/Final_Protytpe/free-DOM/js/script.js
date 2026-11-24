@@ -7,6 +7,10 @@
 
 "use strict";
 
+//Score
+
+let score = 0;
+
 /** Text to display for the title and ending */
 let titleString = "free-Dom Demo";
 let endingString = "you lose";
@@ -14,12 +18,31 @@ let endingString = "you lose";
 //We start by the title
 let state = "title";
 
+//Obstacles multiplication
+
+let obstacles = [];
+
+//Tails
+let tails = [];
+
 /** Your steed */
 
 let creature = {
+  //Head
   x: 65,
   y: 450,
-  size: 100,
+  size: 80,
+  canMove: true,
+
+  //Tails
+  x: 60,
+  y: 450,
+  size: 60,
+  canMove: true,
+
+  x: 55,
+  y: 450,
+  size: 40,
   canMove: true,
 };
 
@@ -30,35 +53,41 @@ let rope = {
   y: 0,
 };
 
-/** Obstacles */
-
-let obstacle1 = {
-  color: "#9932CC",
-  x: 300,
-  y: 300,
-  width: 50,
-  height: 200,
-  velocity: 1,
-};
-
-let obstacle2 = {
-  color: "#9932CC",
-  x: 600,
-  y: 200,
-  width: 100,
-  height: 50,
-  velocity: 1,
-};
-
 /**
  * Create a Canvas
  */
 function setup() {
   createCanvas(900, 500);
 
+  //Obstacles
+  for (let i = 0; i < 5; i++) {
+    let obstacle = createObstacle();
+    obstacle.x = 300 + i * 350;
+    obstacles.push(obstacle);
+  }
+
   //Text settings
   textSize(32);
   textAlign(CENTER, CENTER);
+}
+
+//Create many obstacles
+
+function createObstacle() {
+  let obstacle = {
+    color: "#9932CC",
+    x: random(300, width),
+    y: random(0, height - 200),
+    width: 50,
+    height: 200,
+    velocity: -1,
+  };
+  if (random() < 0.5) {
+    obstacle.width = 200;
+    obstacle.height = 50;
+    obstacle.y = random(0, height - obstacle.height);
+  }
+  return obstacle;
 }
 
 function draw() {
@@ -79,7 +108,7 @@ function titlePresentation() {
   fill(255);
   noStroke();
   textSize(32);
-  circle(65, 450, 100);
+  circle(65, 450, 80);
 
   /* The text*/
 
@@ -99,16 +128,24 @@ function titlePresentation() {
 function gameplay() {
   background("#DDA0DD");
 
-  rope.x = mouseX;
-  rope.y = mouseY;
+  rope.x = constrain(mouseX, creature.size / 2, width - creature.size / 2);
+  rope.y = constrain(mouseY, creature.size / 2, height - creature.size / 2);
 
   moveCreature();
-  moveObstacle();
-  checkCollision();
 
-  drawObstacle();
+  for (let obstacle of obstacles) {
+    moveObstacle(obstacle);
+    drawObstacle(obstacle);
+
+    if (checkCollision(obstacle) === true) {
+      state = "ending";
+    }
+  }
+
   drawRope();
   drawCreature();
+  drawProgressBar();
+  drawScore();
 }
 
 // The creature move along the rope
@@ -122,22 +159,24 @@ function moveCreature() {
 
 // The obstacle are moving back and fourth as soon as they touch the screen
 
-function moveObstacle() {
+function moveObstacle(obstacle) {
   if (creature.canMove === true) {
-    obstacle1.x += obstacle1.velocity;
+    obstacle.x += obstacle.velocity;
 
-    obstacle2.x += obstacle2.velocity;
+    if (obstacle.x <= -obstacle.width) {
+      if (score < 15) {
+        score += 1;
+      }
 
-    if (obstacle1.x === 0) {
-      obstacle1.velocity = 1;
-    } else if (obstacle1.x > 900) {
-      obstacle1.velocity = -1;
-    }
+      let rightEdge = width;
 
-    if (obstacle2.x === 0) {
-      obstacle2.velocity = 1;
-    } else if (obstacle2.x > 900) {
-      obstacle2.velocity = -1;
+      for (let otherObstacle of obstacles) {
+        if (otherObstacle.x + otherObstacle.width > rightEdge) {
+          rightEdge = otherObstacle.x + otherObstacle.width;
+        }
+      }
+      obstacle.x = rightEdge + random(150, 250);
+      obstacle.y = random(0, height - obstacle.height);
     }
   }
 }
@@ -166,41 +205,52 @@ function drawRope() {
 
 //The Obstacle that you have to avoid
 
-function drawObstacle() {
+function drawObstacle(obstacle) {
   push();
-  fill(obstacle1.color);
+  fill(obstacle.color);
   noStroke();
-  rect(obstacle1.x, obstacle1.y, obstacle1.width, obstacle1.height);
+  rect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
+  pop();
+}
+
+// Progress Bar
+
+function drawProgressBar() {
+  let progress = constrain(score / 15, 0, 1);
+
+  push();
+  fill("#6A5ACD");
+  noStroke();
+  rect(30, 45, 300, 15);
   pop();
 
   push();
-  fill(obstacle2.color);
+  fill("#483D8B");
   noStroke();
-  rect(obstacle2.x, obstacle2.y, obstacle2.width, obstacle2.height);
+  rect(30, 45, 300 * progress, 15);
   pop();
+}
 
-  if (checkCollision() === true) {
-    state = "ending";
-  }
+//Score - Numbers
+function drawScore() {
+  push();
+  fill(255);
+  textSize(15);
+  textAlign(RIGHT, CENTER);
+  text("Score: " + score, 870, 52.5);
+  pop();
 }
 
 // How to detect a collision
 
-function checkCollision() {
-  if (
-    creature.x > obstacle1.x &&
-    creature.x < obstacle1.x + obstacle1.width &&
-    creature.y > obstacle1.y &&
-    creature.y < obstacle1.y + obstacle1.height
-  ) {
-    return true;
-  }
+function checkCollision(obstacle) {
+  let radius = creature.size / 2;
 
   if (
-    creature.x > obstacle2.x &&
-    creature.x < obstacle2.x + obstacle2.width &&
-    creature.y > obstacle2.y &&
-    creature.y < obstacle2.y + obstacle2.height
+    creature.x + radius >= obstacle.x &&
+    creature.x - radius <= obstacle.x + obstacle.width &&
+    creature.y + radius >= obstacle.y &&
+    creature.y - radius <= obstacle.y + obstacle.height
   ) {
     return true;
   }
@@ -225,12 +275,19 @@ function resetGame() {
   creature.x = 65;
   creature.y = 450;
 
-  /*Obstacles initial position*/
-  obstacle1.x = 300;
-  obstacle1.y = 300;
+  //Score
 
-  obstacle2.x = 600;
-  obstacle2.y = 600;
+  score = 0;
+
+  //Obstacle
+
+  obstacles = [];
+
+  for (let i = 0; i < 5; i++) {
+    let obstacle = createObstacle();
+    obstacle.x = 300 + i * 350;
+    obstacles.push(obstacle);
+  }
 
   /** Title apppartion  */
   state = "title";
