@@ -74,15 +74,23 @@ function draw() {
 function titlePresentation() {
   background("#D8BFD8");
 
+  /* The position of our creature -> turn to start button*/
+  push();
+  fill(255);
+  noStroke();
+  textSize(32);
+  circle(65, 450, 100);
+
+  /* The text*/
+
+  fill("#D8BFD8");
+  text("start", 65, 450 - 0);
+  pop();
+
   push();
   fill("#ffff");
   text(titleString, width / 2, height / 2);
   pop();
-
-  //   if (moveObstacle) {
-  //     state = "gameplay";
-  //     moveCreature();
-  //   }
 }
 
 /**
@@ -206,10 +214,36 @@ function ending() {
   pop();
 }
 
+function resetGame() {
+  push();
+  fill(255);
+  noStroke();
+  circle(65, 450, 100);
+  pop();
+
+  /*Creature initial position*/
+  creature.x = 65;
+  creature.y = 450;
+
+  /*Obstacles initial position*/
+  obstacle1.x = 300;
+  obstacle1.y = 300;
+
+  obstacle2.x = 600;
+  obstacle2.y = 600;
+
+  /** Title apppartion  */
+  state = "title";
+}
+
 function mousePressed() {
   if (state === "title") {
-    state = "gameplay";
+    let d = dist(creature.x, creature.y, mouseX, mouseY);
+
+    if (d < 30) {
+      state = "gameplay";
+    }
   } else if (state === "ending") {
-    state = "title";
+    resetGame();
   }
 }
