@@ -119,3 +119,26 @@ For the next stage, I want to improve the creature's appearance and continue dev
 
 ![Japanese Emperor Caterpillar](./topics/Final_Protytpe/free-DOM/assets/images/caterpillar.jpg)
 ![free-Dom demo screenshot](./topics/Final_Protytpe/free-DOM/assets/images/free-Dom-demo.png)
+
+# 2026/11/24
+
+This week, I continued developing my final project, _Free-DOM_, by focusing on the gameplay of the first two levels. My main objective was to establish a functional game before progressively introducing changes in the relationship between the player and the creature.
+
+One of the first problems I solved was the restarting system that I mentioned in my previous journal entry. By creating a `resetGame()` function, I was able to reset the creature's position, the obstacles, and the score, allowing the player to restart the game after losing.
+
+Inspired by _Chrome Dino_, I wanted to create the impression that the creature was moving through an environment where new obstacles continuously appeared. To achieve this, I used arrays and loops instead of creating each obstacle individually. However, I encountered several errors because some of my functions were still referring to my original two obstacles. I had to adapt these functions by using parameters, which helped me better understand how arrays, loops, and functions can work together.
+
+Another difficulty was the distribution of the obstacles. At first, I used random values for their positions, but several obstacles were overlapping, making the game difficult to play. To solve this problem, I used a loop to identify the obstacle located furthest to the right before repositioning another obstacle after it. This helped me understand that randomness needs to be controlled depending on the experience I want to create.
+
+I also improved the collision system by including the radius of the creature in my conditions. Previously, the game did not always end immediately when the creature touched an obstacle. I then introduced a scoring system and a progress bar to give the player an objective. Each time an obstacle completely leaves the canvas, the player receives one point, and the progress bar gradually fills until the score reaches fifteen.
+
+![Level 2 of the game](./topics/Final_Prototype/free-DOM/assets/images/level_2.png)
+_Screenshot of the second level of Free-DOM._
+
+For the second level, I wanted the player to experience the first signs of resistance from the creature. With the help of the professor, I explored how to modify the creature's movement using the `lerp()` and `random()` functions. Unlike the first level, where the value of `lerp()` remained constant at 0.1, it can now occasionally change to a random value between 0.002 and 0.15. This allows the creature to react more slowly or more quickly to the player's movements.
+
+I also added a slight shaking movement by introducing random variations between -1 and 1 to its coordinates. Since the obstacles are now larger and have different dimensions, I did not want the creature's movements to become too unpredictable. My intention is to make the player gradually experience difficulties controlling the creature without making the game unnecessarily frustrating.
+
+Through this week's work, I realized that programming a game requires more than making its mechanics functional. I also need to consider how each technical decision influences the player's experience. In this project, even a small change in the creature's movement can help communicate its growing resistance.
+
+For the next stage, I want to develop the creature's independence and explore how the obstacles can gradually disappear without the player immediately noticing. I also still need to work on the creature's visual appearance. Ultimately, I want to transform the experience from a traditional obstacle game into a reflection on the difference between guiding and controlling someone.
